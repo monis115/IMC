@@ -1,0 +1,2143 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>IMC Educational Consultancy</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" type="text/css" href="/css/style.css">
+      <link rel="stylesheet" href="/css/updatedcss.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+      
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link href="https://fonts.googleapis.com/icons?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+      <!-- owl stylesheets --> 
+      <link rel="stylesheet" href="css/owl.carousel.min.css">
+      <link rel="stylesheet" href="css/owl.theme.default.min.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+   </head>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+   <style>
+  
+ /*  css for collegs top starts */
+
+/* Reset default styles to avoid interference */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header styling */
+.edu-header {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    position: relative;
+    z-index: 1000; /* Ensure header is above other content */
+}
+
+/* Container */
+.edu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Navbar */
+.edu-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap; /* Prevent wrapping on desktop */
+}
+
+/* Logo */
+.edu-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent logo from shrinking */
+}
+
+.edu-logo__img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+/* Nav container (center) */
+.edu-nav-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edu-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.edu-nav__item {
+    margin: 0 15px;
+    position: relative;
+}
+
+.edu-nav__link {
+    color: #333333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 5px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.edu-nav__link:hover,
+.edu-nav__item--active .edu-nav__link {
+    color: #007bff;
+}
+
+/* Dropdown */
+.edu-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 10px 0;
+    z-index: 100;
+}
+
+.edu-nav__item:hover .edu-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.edu-dropdown__item {
+    display: block;
+    padding: 10px 20px;
+    color: #333333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.edu-dropdown__item:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+    padding-left: 25px;
+}
+
+/* Subdropdown */
+.edu-subdropdown {
+    position: relative;
+}
+
+.edu-subdropdown__menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 220px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+.edu-subdropdown:hover .edu-subdropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+/* Apply button */
+.edu-apply {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent button from shrinking */
+}
+
+.edu-apply__btn {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.edu-apply__btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+/* Toggler (mobile) */
+.edu-navbar__toggler {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333333;
+    padding: 5px;
+}
+
+.edu-navbar__toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 992px) {
+    .edu-navbar {
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .edu-logo {
+        order: 0;
+        flex: 1;
+    }
+
+    .edu-navbar__toggler {
+        display: block;
+        order: 1;
+    }
+
+    .edu-nav-container {
+        order: 3;
+        flex-basis: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+    }
+
+    .edu-navbar__collapse--show .edu-nav-container {
+        max-height: 1000px;
+    }
+
+    .edu-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .edu-nav__item {
+        margin: 0;
+        width: 100%;
+    }
+
+    .edu-nav__link {
+        padding: 12px 15px;
+        border-bottom: 1px solid #f1f1f1;
+    }
+
+    .edu-dropdown {
+        position: static;
+        width: 100%;
+        transform: none;
+        box-shadow: none;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.3s ease;
+        opacity: 1;
+        visibility: visible;
+        padding: 0;
+        border-radius: 0;
+    }
+
+    .edu-nav__item--open .edu-dropdown {
+        max-height: 500px;
+        padding: 10px 0;
+    }
+
+    .edu-subdropdown__menu {
+        position: static;
+        width: 100%;
+        transform: none;
+        box-shadow: none;
+        padding: 0 0 0 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.3s ease;
+        opacity: 1;
+        visibility: visible;
+        border-radius: 0;
+    }
+
+    .edu-subdropdown--open .edu-subdropdown__menu {
+        max-height: 500px;
+        padding: 10px 0 10px 20px;
+    }
+
+    .edu-dropdown__arrow {
+        float: right;
+        transition: transform 0.3s ease;
+    }
+
+    .edu-subdropdown--open .edu-dropdown__arrow {
+        transform: rotate(90deg);
+    }
+
+    .edu-apply {
+        order: 2;
+    }
+}
+
+@media (max-width: 576px) {
+    .edu-logo__img {
+        height: 40px;
+    }
+
+    .edu-apply__btn {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .edu-nav__link,
+    .edu-dropdown__item {
+        font-size: 14px;
+    }
+}
+
+ 
+ /*  css for collegs top  end */
+
+
+   </style>
+   <body>
+
+      <header class="edu-header">
+        <div class="edu-container">
+            <nav class="edu-navbar">
+                <div class="edu-logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Educational Institution Logo" class="edu-logo__img">
+                    </a>
+                </div>
+                
+                <button class="edu-navbar__toggler" type="button" aria-label="Toggle navigation">
+                    <span class="edu-navbar__toggler-icon"></span>
+                </button>
+                
+                <div class="edu-nav-container" id="eduNavbarContent">
+                    <ul class="edu-nav">
+                        <li class="edu-nav__item edu-nav__item--active">
+                            <a class="edu-nav__link" href="index.html">Home</a>
+                        </li>
+                        <li class="edu-nav__item">
+                            <a class="edu-nav__link" href="">Medical</a>
+                            <ul class="edu-dropdown">
+                                <li class="edu-subdropdown">
+                                    <a class="edu-dropdown__item" href="404error.html">NEET UG <span class="edu-dropdown__arrow">▶</span></a>
+                                    <ul class="edu-subdropdown__menu">
+                                        <li><a class="edu-dropdown__item" href="404error.html"> MBBS/BDS</a></li>
+                                        <li><a class="edu-dropdown__item" href="404error.html">BAMS</a></li>
+                                        <li><a class="edu-dropdown__item" href="404error.html">BUMS</a></li>
+                                        <li><a class="edu-dropdown__item" href="404error.html">BHMS</a></li>
+                                    </ul>
+                                </li>
+                                <li class="edu-subdropdown">
+                                    <a class="edu-dropdown__item" href="404error.html">NEET PG <span class="edu-dropdown__arrow">▶</span></a>
+                                    <ul class="edu-subdropdown__menu">
+                                        <li><a class="edu-dropdown__item" href="404error.html">MD/MS</a></li>
+                                        <li><a class="edu-dropdown__item" href="404error.html">Ayush PS</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="edu-nav__item">
+                            <a class="edu-nav__link" href="404error.html">PARA Medical</a>
+                            <ul class="edu-dropdown">
+                                <li><a class="edu-dropdown__item" href="404error.html"> B.Sc Nursing</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">B.Sc Radiology</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">ANM/GNM</a></li>
+                            </ul>
+                        </li>
+                        <li class="edu-nav__item">
+                            <a class="edu-nav__link" href="404error.html">Management</a>
+                            <ul class="edu-dropdown">
+                                <li><a class="edu-dropdown__item" href="404error.html">MBA</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">BBA</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">PGDM</a></li>
+                            </ul>
+                        </li>
+                        <li class="edu-nav__item">
+                            <a class="edu-nav__link" href="404error.html">Engineering</a>
+                            <ul class="edu-dropdown">
+                                <li><a class="edu-dropdown__item" href="404error.html">B.Tech</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">B.Arch</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">M.Tech</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="edu-apply">
+                    <a href="apply.html" class="edu-apply__btn">Apply Now</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+
+
+      <!--header section start -->
+      <!-- <div class="header_section">
+         <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg custom-navbar">
+               <div class="container">
+                   <div class="logo">
+                       <a href="index.html">
+                           <img src="images/logo.png" alt="Logo" class="logo-img">
+                       </a>
+                   </div>
+                   
+                   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+                           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                       <span class="navbar-toggler-icon"></span>
+                   </button>
+                   
+                   <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                       <ul class="navbar-nav mx-auto">
+                           <li class="nav-item active">
+                               <a class="nav-link" href="index.html">Home</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="languges.html">Medical</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="services.html">PARA Medical</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="events.html">Management</a>
+                           </li>
+                           <li class="nav-item">
+                               <a class="nav-link" href="contact.html">Engineering</a>
+                           </li>
+                       </ul>
+                       
+                       <div class="apply-btn">
+                           <a href="404error.html" class="btn-apply">Apply Now</a>
+                       </div>
+                   </div>
+               </div>
+           </nav>
+         </div> -->
+
+
+
+         
+         <!--banner section start -->
+
+         <div class="premium-edu-banner">
+            <div class="premium-edu-logo">Academia</div>
+            <div id="premium-edu-particles"></div>
+            <div class="premium-edu-pattern-overlay"></div>
+            <div class="premium-edu-overlay-decoration"></div>
+            <div class="premium-edu-overlay-decoration premium-edu-overlay-decoration-2"></div>
+            
+            <div class="premium-edu-slider" id="premium-edu-slider">
+                <div class="premium-edu-slide active" id="premium-edu-slide-1">
+                    <div class="premium-edu-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="premium-edu-decorative-line"></div>
+                    <div class="premium-edu-slide-number">01</div>
+                    <div class="premium-edu-content-wrapper">
+                        <div class="premium-edu-icon-container">
+                            <i class="fas fa-stethoscope"></i>
+                        </div>
+                        <p class="premium-edu-school-type">MBBS School</p>
+                        <h1 class="premium-edu-heading">Build<br>Your Medical Career</h1>
+                        <a href="404error.html" class="premium-edu-apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="premium-edu-slide" id="premium-edu-slide-2">
+                    <div class="premium-edu-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="premium-edu-decorative-line"></div>
+                    <div class="premium-edu-slide-number">02</div>
+                    <div class="premium-edu-content-wrapper">
+                        <div class="premium-edu-icon-container">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <p class="premium-edu-school-type">Engineering School</p>
+                        <h1 class="premium-edu-heading">Any<br>Engineering Field You Want</h1>
+                        <a href="404error.html" class="premium-edu-apply-btn">Apply Now</a>
+                    </div>
+                </div>
+                <div class="premium-edu-slide" id="premium-edu-slide-3">
+                    <div class="premium-edu-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1573164574572-cb89e39749b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+                    <div class="premium-edu-decorative-line"></div>
+                    <div class="premium-edu-slide-number">03</div>
+                    <div class="premium-edu-content-wrapper">
+                        <div class="premium-edu-icon-container">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <p class="premium-edu-school-type">Management School</p>
+                        <h1 class="premium-edu-heading">Any<br>Management Program You Choose</h1>
+                        <a href="404error.html" class="premium-edu-apply-btn">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="premium-edu-scroll-indicator">SCROLL</div>
+            
+            <div class="premium-edu-dots-container">
+                <div class="premium-edu-dots">
+                    <span class="premium-edu-dot active" onclick="premiumEduCurrentSlide(0)"></span>
+                    <span class="premium-edu-dot" onclick="premiumEduCurrentSlide(1)"></span>
+                    <span class="premium-edu-dot" onclick="premiumEduCurrentSlide(2)"></span>
+                </div>
+            </div>
+            
+            <div class="premium-edu-navigation-arrows">
+                <div class="premium-edu-arrow prev" onclick="premiumEduChangeSlide(-1)">
+                    <i class="fas fa-arrow-left"></i>
+                </div>
+                <div class="premium-edu-arrow next" onclick="premiumEduChangeSlide(1)">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </div>
+            
+            <div class="premium-edu-progress-bar" id="premium-edu-progress-bar"></div>
+        </div>
+         <!--banner section end -->
+      </div>
+      
+      <!--header section end -->
+
+      
+      <!--sticky bytton  section start -->
+      <div class="sticky-application-container">
+        <!-- Application Form Panel -->
+        <div class="application-form-panel" id="applicationForm">
+            <div class="form-header">
+                <h2 class="form-title">Apply Now</h2>
+                <button class="form-close-button" id="formCloseButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <form class="application-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Your Name*" required class="form-input">
+                    <span class="input-focus-effect"></span>
+                </div>
+                
+                <div class="form-group">
+                    <input type="tel" id="mobile" name="mobile" placeholder="Mobile*" required class="form-input">
+                    <span class="input-focus-effect"></span>
+                </div>
+                
+                <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Email Address*" required class="form-input">
+                    <span class="input-focus-effect"></span>
+                </div>
+                
+                <div class="form-group">
+                    <input type="text" id="qualification" name="qualification" placeholder="Qualification" class="form-input">
+                    <span class="input-focus-effect"></span>
+                </div>
+                
+                <div class="form-group">
+                    <select id="state" name="state" class="form-select">
+                        <option value="" disabled selected>Select State</option>
+                        <option value="andhra-pradesh">Andhra Pradesh</option>
+                        <option value="arunachal-pradesh">Arunachal Pradesh</option>
+                        <option value="assam">Assam</option>
+                        <option value="bihar">Bihar</option>
+                        <option value="chhattisgarh">Chhattisgarh</option>
+                        <option value="goa">Goa</option>
+                        <option value="gujarat">Gujarat</option>
+                        <option value="haryana">Haryana</option>
+                        <option value="himachal-pradesh">Himachal Pradesh</option>
+                        <option value="jharkhand">Jharkhand</option>
+                        <option value="karnataka">Karnataka</option>
+                        <option value="kerala">Kerala</option>
+                        <option value="madhya-pradesh">Madhya Pradesh</option>
+                        <option value="maharashtra">Maharashtra</option>
+                        <option value="manipur">Manipur</option>
+                        <option value="meghalaya">Meghalaya</option>
+                        <option value="mizoram">Mizoram</option>
+                        <option value="nagaland">Nagaland</option>
+                        <option value="odisha">Odisha</option>
+                        <option value="punjab">Punjab</option>
+                        <option value="rajasthan">Rajasthan</option>
+                        <option value="sikkim">Sikkim</option>
+                        <option value="tamil-nadu">Tamil Nadu</option>
+                        <option value="telangana">Telangana</option>
+                        <option value="tripura">Tripura</option>
+                        <option value="uttar-pradesh">Uttar Pradesh</option>
+                        <option value="uttarakhand">Uttarakhand</option>
+                        <option value="west-bengal">West Bengal</option>
+                        <option value="andaman-nicobar">Andaman and Nicobar Islands</option>
+                        <option value="chandigarh">Chandigarh</option>
+                        <option value="dadra-nagar-haveli">Dadra and Nagar Haveli</option>
+                        <option value="daman-diu">Daman and Diu</option>
+                        <option value="delhi">Delhi</option>
+                        <option value="jammu-kashmir">Jammu and Kashmir</option>
+                        <option value="ladakh">Ladakh</option>
+                        <option value="lakshadweep">Lakshadweep</option>
+                        <option value="puducherry">Puducherry</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                </div>
+                
+                <div class="form-group">
+                    <select id="course" name="course" class="form-select">
+                        <option value="" disabled selected>Select Course</option>
+                        <option value="mbbs">MBBS</option>
+                        <option value="bams">BAMS</option>
+                        <option value="bums">BUMS</option>
+                        <option value="bhms">BHMS</option>
+                        <option value="radiology">Radiology</option>
+                        <option value="bsc-nursing">B.Sc Nursing</option>
+                        <option value="bba">BBA</option>
+                        <option value="mba">MBA</option>
+                        <option value="btech">B.Tech</option>
+                        <option value="barch">B.Arch</option>
+                    </select>
+                    <span class="select-arrow"></span>
+                </div>
+                
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Message" class="form-textarea"></textarea>
+                    <span class="input-focus-effect"></span>
+                </div>
+                
+                <button type="submit" class="submit-button">
+                    <span>SUBMIT</span>
+                    <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </button>
+            </form>
+        </div>
+        
+        <!-- Sticky Button -->
+        <button class="sticky-application-button" id="admissionButton">
+            <span class="sticky-button-text">Admissions 25-26</span>
+        </button>
+    </div>
+      <!--stikcy button  section end -->
+
+      <section class="global-education">
+        <div class="container">
+          <header class="section-header">
+            <h2 class="subtitle">Start Now</h2>
+            <h1 class="title">Plan Your Global Education</h1>
+          </header>
+          
+          <div class="features-grid">
+            <!-- Card 1 -->
+            <div class="feature-card">
+              <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+                  <path d="M16 2H8C7.44772 2 7 2.44772 7 3V21C7 21.5523 7.44772 22 8 22H16C16.5523 22 17 21.5523 17 21V3C17 2.44772 16.5523 2 16 2Z" stroke="#333333" stroke-width="1.5" fill="none"/>
+                  <path d="M9 6H15M9 10H15M9 14H13" stroke="#333333" stroke-width="1.5" stroke-linecap="round"/>
+                  <circle cx="11" cy="18" r="1" fill="#333333"/>
+                </svg>
+              </div>
+              <h3>No Confusion</h3>
+              <p>Just Clarity</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div class="feature-card white">
+              <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+                  <path d="M12 12C14.2091 12 16 10.2091 16 8C16 5.79086 14.2091 4 12 4C9.79086 4 8 5.79086 8 8C8 10.2091 9.79086 12 12 12Z" stroke="#333333" stroke-width="1.5" fill="none"/>
+                  <path d="M18 16L13 18.5M6 16L11 18.5" stroke="#333333" stroke-width="1.5"/>
+                  <path d="M4 22H20C20.5523 22 21 21.5523 21 21V15C21 14.4477 20.5523 14 20 14H4C3.44772 14 3 14.4477 3 15V21C3 21.5523 3.44772 22 4 22Z" stroke="#333333" stroke-width="1.5" fill="none"/>
+                </svg>
+              </div>
+              <h3>Right Country</h3>
+              <p>& Course</p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div class="feature-card">
+              <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+                  <rect x="5" y="2" width="14" height="20" rx="2" stroke="#333333" stroke-width="1.5" fill="none"/>
+                  <path d="M9 18H15" stroke="#333333" stroke-width="1.5" stroke-linecap="round"/>
+                  <rect x="7" y="4" width="10" height="12" rx="1" stroke="#333333" stroke-width="1.5" fill="none"/>
+                </svg>
+              </div>
+              <h3>Fast Track</h3>
+              <p>Application</p>
+            </div>
+            
+            <!-- Card 4 -->
+            <div class="feature-card">
+              <div class="icon-container">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+                  <path d="M6 9V6C6 3.79086 7.79086 2 10 2H14C16.2091 2 18 3.79086 18 6V9" stroke="#333333" stroke-width="1.5" fill="none"/>
+                  <rect x="4" y="9" width="16" height="13" rx="2" stroke="#333333" stroke-width="1.5" fill="none"/>
+                  <path d="M9 14H15M9 18H13" stroke="#333333" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Visa Success</h3>
+              <p>No Stress</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--  Course Section Start  -->
+
+      <section class="top-courses-section">
+         <div class="container">
+             <h2 class="section-title">TOP COURSES</h2>
+             <div class="accent-line"></div>
+             
+             <div class="courses-grid">
+                 <!-- All cards in one row -->
+                 <div class="course-card">
+                     <div class="icon-container">
+                         <div class="icon-bg">
+                             <i class="material-icons course-icon">face_retouching_natural</i>
+                         </div>
+                         <div class="hover-circle"></div>
+                     </div>
+                     <h3 class="course-title">MBBS/BDS</h3>
+                     <div class="course-info">
+                         <p>Medical & Dental Programs</p>
+                         <a href="404error.html" class="learn-more">Learn More <i class="material-icons arrow-icon">arrow_forward</i></a>
+                     </div>
+                 </div>
+                 
+                 <div class="course-card">
+                     <div class="icon-container">
+                         <div class="icon-bg">
+                             <i class="material-icons course-icon">biotech</i>
+                         </div>
+                         <div class="hover-circle"></div>
+                     </div>
+                     <h3 class="course-title">MD/MS</h3>
+                     <div class="course-info">
+                         <p>Post-Graduate Medical Studies</p>
+                         <a href="404error.html" class="learn-more">Learn More <i class="material-icons arrow-icon">arrow_forward</i></a>
+                     </div>
+                 </div>
+                 
+                 <div class="course-card">
+                     <div class="icon-container">
+                         <div class="icon-bg">
+                             <i class="material-icons course-icon">medication</i>
+                         </div>
+                         <div class="hover-circle"></div>
+                     </div>
+                     <h3 class="course-title">PARAMEDICAL</h3>
+                     <div class="course-info">
+                         <p>Allied Health Sciences</p>
+                         <a href="404error.html" class="learn-more">Learn More <i class="material-icons arrow-icon">arrow_forward</i></a>
+                     </div>
+                 </div>
+                 
+                 <div class="course-card">
+                     <div class="icon-container">
+                         <div class="icon-bg">
+                             <i class="material-icons course-icon">engineering</i>
+                         </div>
+                         <div class="hover-circle"></div>
+                     </div>
+                     <h3 class="course-title">Engineering</h3>
+                     <div class="course-info">
+                         <p>Technical & Applied Sciences</p>
+                         <a href="404error.html" class="learn-more">Learn More <i class="material-icons arrow-icon">arrow_forward</i></a>
+                     </div>
+                 </div>
+                 
+                 <div class="course-card">
+                     <div class="icon-container">
+                         <div class="icon-bg">
+                             <i class="material-icons course-icon">school</i>
+                         </div>
+                         <div class="hover-circle"></div>
+                     </div>
+                     <h3 class="course-title">BBA/MBA</h3>
+                     <div class="course-info">
+                         <p>Business Administration</p>
+                         <a href="404error.html" class="learn-more">Learn More <i class="material-icons arrow-icon">arrow_forward</i></a>
+                     </div>
+                 </div>
+                 
+                 <div class="course-card">
+                     <div class="icon-container">
+                         <div class="icon-bg">
+                             <i class="material-icons course-icon">gavel</i>
+                         </div>
+                         <div class="hover-circle"></div>
+                     </div>
+                     <h3 class="course-title">LAW</h3>
+                     <div class="course-info">
+                         <p>Legal Studies & Practice</p>
+                         <a href="404error.html" class="learn-more">Learn More <i class="material-icons arrow-icon">arrow_forward</i></a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+
+
+
+     <section class="consultation-section">
+      <div class="container">
+          <div class="admission-banner">
+              Admission open for 2025-26 session
+          </div>
+          
+          <div class="row">
+              <div class="col-lg-4">
+                  <div class="service-intro">
+                      <h2 class="service-title">IMC Consultancy Services</h2>
+                      <h3 class="service-subtitle">Premier Global Education Consultants</h3>
+                      
+                      <p class="service-description">
+                          IMC Consultancy Services stands as a distinguished leader in international education consulting. 
+                      </p>
+                      
+                      <p class="service-description">
+                          Our comprehensive approach covers every aspect of the international education process - from personalized university selection and application preparation to visa processing and pre-departure orientation. Our structured methodology and attention to detail have positioned us among the frontrunners in international education consulting, providing you with a seamless pathway to realize your global academic ambitions.
+                      </p>
+                      
+                      <a href="404error.html" class="detail-button">MORE DETAIL</a>
+                  </div>
+              </div>
+              
+              <div class="col-lg-8">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <div class="service-card">
+                              <div class="icon-circle purple">
+                                  <i class="material-icons">description</i>
+                              </div>
+                              <h4>Application Process</h4>
+                              <p>
+                                  Our team manages your application with meticulous precision and expertise. We adhere strictly to all institutional guidelines while carefully compiling and submitting your documents.
+                              </p>
+                          </div>
+                      </div>
+                      
+                      <div class="col-md-6">
+                          <div class="service-card">
+                              <div class="icon-circle green">
+                                  <i class="material-icons">support_agent</i>
+                              </div>
+                              <h4>Proper Assistance</h4>
+                              <p>
+                                  Comprehensive support is at the heart of our service commitment. We provide end-to-end assistance throughout your educational journey - from application submissions to post-arrival support. 
+                              </p>
+                          </div>
+                      </div>
+                      
+                      <div class="col-md-6">
+                          <div class="service-card">
+                              <div class="icon-circle pink">
+                                  <i class="material-icons">psychology</i>
+                              </div>
+                              <h4>Perfect Counselling</h4>
+                              <p>
+                                  Discover your ideal educational pathway through our personalized counseling approach. Our advisors evaluate multiple institutions and programs to identify options perfectly aligned with your ambitions.
+                              </p>
+                          </div>
+                      </div>
+                      
+                      <div class="col-md-6">
+                          <div class="service-card">
+                              <div class="icon-circle orange">
+                                  <i class="material-icons">info</i>
+                              </div>
+                              <h4>Accurate Information</h4>
+                              <p>
+                                  We pride ourselves on delivering meticulously verified information through comprehensive research. Our team obtains precise details about institutions worldwide, including program specifics, campus environments, admission requirements, and eligibility criteria. 
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+   <!--  How it works starts -->
+
+   <section id="process_flow" class="flow-section">
+    <div class="flow-header">
+        <h2>How It <span>Works</span></h2>
+    </div>
+
+    <div class="flow-container">
+        <!-- Step 1 -->
+        <div class="flow-step">
+            <div class="step-icon">
+                <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="step-number">01</div>
+            <h3>Student Profile Analysis</h3>
+            <p>We analyze the Student profile as per the performance in exam and student academic background.</p>
+        </div>
+
+        <!-- Connector 1 -->
+        <div class="flow-connector">
+            <div class="line"></div>
+            <div class="dot-pulse"></div>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flow-step">
+            <div class="step-icon">
+                <i class="fas fa-university"></i>
+            </div>
+            <div class="step-number">02</div>
+            <h3>Advice for Best Colleges</h3>
+            <p>IMC Educational Consultancy provide guidance for the admission of the student into the best institute of India and abroad.</p>
+        </div>
+
+        <!-- Connector 2 -->
+        <div class="flow-connector">
+            <div class="line"></div>
+            <div class="dot-pulse"></div>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flow-step">
+            <div class="step-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="step-number">03</div>
+            <h3>End to End Admission Process</h3>
+            <p>IMC Educational Consultancy provide support for the end to end admission process.</p>
+        </div>
+    </div>
+</section>
+         
+       
+
+   <!--  How it works ends -->
+
+  
+
+
+
+   <!--  Countries starts  -->
+   <footer>
+    <div class="footer-container">
+        <!-- Left Side -->
+        <div class="footer-left">
+            <!-- <div class="footer-column">
+                <h3>Top Medical Colleges</h3>
+                <ul>
+                    <li><a href="404error.html">People Friendship University</a></li>
+                    <li><a href="404error.html">Saint Petersburg State Medical University</a></li>
+                    <li><a href="404error.html">Kazan State Medical University</a></li>
+                    <li><a href="404error.html">Tver State Medical University</a></li>
+                    <li><a href="404error.html" class="highlight-link">Philippines</a></li>
+                </ul>
+            </div> -->
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="404error.html"><i class="fas fa-chevron-right"></i> Medical</a></li>
+                    <li><a href="404error.html"><i class="fas fa-chevron-right"></i> Educational Service</a></li>
+                    <li><a href="404error.html"><i class="fas fa-chevron-right"></i> MCI Screening Test</a></li>
+                    <li><a href="404error.html"><i class="fas fa-chevron-right"></i> USMLE</a></li>
+                    <li><a href="404error.html"><i class="fas fa-chevron-right"></i> UKCAT</a></li>
+                    <li><a href="404error.html"><i class="fas fa-chevron-right"></i> UKPLAB</a></li>
+                    <li><a href="404error.html"><i class="fas fa-chevron-right"></i> TOEFL</a></li>
+                    <li><a href="404error.html"><i class="fas fa-chevron-right"></i> IELTS</a></li>
+                </ul>
+            </div>
+            <div class="footer-column-group">
+                <div class="link-box">
+                    <div class="link-box-header">
+                        <h4>Be Our Franchisee</h4>
+                    </div>
+                    <ul>
+                        <li><a href="404error.html"><i class="fas fa-briefcase"></i> Franchise Overview</a></li>
+                        <li><a href="404error.html"><i class="fas fa-building"></i> Franchise Infrastructure</a></li>
+                        <li><a href="404error.html"><i class="fas fa-edit"></i> Apply Online</a></li>
+                    </ul>
+                </div>
+                <div class="link-box">
+                    <div class="link-box-header">
+                        <h4>Other Links</h4>
+                    </div>
+                    <ul>
+                        <li><a href="404error.html"><i class="fas fa-file-alt"></i> Visa Information</a></li>
+                        <li><a href="404error.html"><i class="fas fa-plane-departure"></i> Travel Tips</a></li>
+                        <li><a href="404error.html"><i class="fas fa-cloud-download-alt"></i> Downloads</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="latest-news-widget">
+                <h2>Latest  News</h2>
+                <ul>
+                    <li>
+                        <a href="404error.html" class="news-item">
+                            <i class="fas fa-bullhorn news-icon"></i> <!-- Icon added -->
+                            <span class="news-text">Karnataka NEET UG Registration 2024 <span class="news-status">(Last Date 09/08/2024)</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="404error.html" class="news-item">
+                            <i class="fas fa-bullhorn news-icon"></i> <!-- Icon added -->
+                            <span class="news-text">NEET UG Counselling 2024 <span class="news-status">(From 14/08/2024 To 20/08/2024)</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="404error.html" class="news-item">
+                            <i class="fas fa-calendar-check news-icon"></i> <!-- Different icon for variety -->
+                            <span class="news-text">CPS Mumbai Admission 2024 <span class="news-status">(Admission Open)</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="404error.html" class="news-item">
+                            <i class="fas fa-calendar-check news-icon"></i> <!-- Different icon for variety -->
+                            <span class="news-text">B.Sc Nursing Admission UP 2024 <span class="news-status">(Admission Open)</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="404error.html" class="news-item">
+                            <i class="fas fa-stopwatch news-icon"></i> <!-- Another icon example -->
+                            <span class="news-text">CAT 2024 Admission <span class="news-status">(Last Date: 13/09/2024)</span></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="404error.html" class="news-item">
+                            <i class="fas fa-stopwatch news-icon"></i> <!-- Another icon example -->
+                            <span class="news-text">Army BSc Nursing Admission <span class="news-status">(Last Date: 07/08/2024)</span></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        
+        </div>
+
+        <!-- Right Side -->
+        <div class="footer-right-panel">
+            <div class="panel-header">
+                <h2>Medical School</h2>
+            </div>
+            
+            <div class="region-section card-style">
+                <h4><i class="fas fa-globe-asia"></i> Asia</h4>
+                <ul class="country-list">
+                    <li><a href="">China</a></li>
+                    <li><a href="404error.html">Russia</a></li>
+                    <li><a href="404error.html">Georgia</a></li>
+                    <li><a href="404error.html">Nepal</a></li>
+                    <li><a href="404error.html">India</a></li>
+                    <li><a href="404error.html">Philippines</a></li>
+                    <li><a href="404error.html">Kyrgyzstan</a></li>
+                    <li><a href="404error.html">Bangladesh</a></li>
+                    <li><a href="404error.html">Singapore</a></li>
+                    <li><a href="404error.html">Kazakhstan</a></li>
+                    <li><a href="404error.html">Malaysia</a></li>
+                </ul>
+            </div>
+
+            <div class="region-section card-style">
+                <h4><i class="fas fa-landmark"></i> Europe</h4>
+                <ul class="country-list">
+                    <li><a href="404error.html">Armenia</a></li>
+                    <li><a href="404error.html">Georgia</a></li>
+                    <li><a href="404error.html">Ukraine</a></li>
+                    <li><a href="404error.html">Romania</a></li>
+                    <li><a href="404error.html">Belarus</a></li>
+                    <li><a href="404error.html">France</a></li>
+                    <li><a href="404error.html">Spain</a></li>
+                    <li><a href="404error.html">United Kingdom</a></li>
+                    <li><a href="404error.html">Netherlands</a></li>
+                    <li><a href="404error.html">Lithuania</a></li>
+                    <li><a href="404error.html">Italy</a></li>
+                    <li><a href="404error.html">Bulgaria</a></li>
+                </ul>
+            </div>
+
+            <div class="region-row">
+                <div class="region-section card-style">
+                    <h4><i class="fas fa-map-marked-alt"></i> South America</h4>
+                    <ul class="country-list short-list">
+                        <li><a href="404error.html">Guyana</a></li>
+                        <li><a href="404error.html">Brazil</a></li>
+                    </ul>
+                </div>
+                <div class="region-section card-style">
+                    <h4><i class="fas fa-map-pin"></i> Central America</h4>
+                    <ul class="country-list short-list">
+                        <li><a href="404error.html">Guyana</a></li>
+                        <li><a href="404error.html">Belize</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="region-section card-style">
+                <h4><i class="fas fa-graduation-cap"></i> World Medical School</h4>
+                <ul class="country-list-flags">
+                    <li><a href="404error.html"><img src="https://flagcdn.com/w20/au.png" alt="Australia Flag" class="flag-icon"> Australia</a></li>
+                    <li><a href="404error.html"><img src="https://flagcdn.com/w20/nz.png" alt="New Zealand Flag" class="flag-icon"> New Zealand</a></li>
+                    <li><a href="404error.html"><img src="https://flagcdn.com/w20/jp.png" alt="Japan Flag" class="flag-icon"> Japan</a></li>
+                    <li><a href="404error.html"><img src="https://flagcdn.com/w20/id.png" alt="Indonesia Flag" class="flag-icon"> Indonesia</a></li>
+                    <li><a href="404error.html"><img src="https://flagcdn.com/w20/ca.png" alt="Canada Flag" class="flag-icon"> Canada</a></li>
+                    <li><a href="404error.html"><img src="https://flagcdn.com/w20/us.png" alt="USA Flag" class="flag-icon"> USA</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+</footer>
+
+ <!--  Testimonials starts -->
+ <section class="review-section">
+    <div class="review-header">
+        <h2>Review <span>Customers</span></h2>
+    </div>
+
+    <div class="review-container">
+        <!-- Review 1 -->
+        <div class="review-box">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-content">
+                <i class="fas fa-quote-left quote"></i>
+                <p>IMC Educational Consultancy is the One of the best Educational Consultancy based in Delhi.</p>
+            </div>
+            <div class="reviewer">
+                <div class="name">Harsh Tyagi</div>
+                <div class="title">Medical Student (2021)</div>
+            </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="review-box">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-content">
+                <i class="fas fa-quote-left quote"></i>
+                <p>IMC Consultancy made my dream of studying MBBS abroad a reality! Their expert guidance and support were invaluable throughout the entire process. Highly recommended</p>
+            </div>
+            <div class="reviewer">
+                <div class="name">Divya Dagar</div>
+                <div class="title">Medical Student (2021)</div>
+            </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="review-box">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="review-content">
+                <i class="fas fa-quote-left quote"></i>
+                <p>I can't thank IMC Consultancy enough for helping me secure admission to a top medical university abroad. Their professionalism and dedication are truly commendable!</p>
+            </div>
+            <div class="reviewer">
+                <div class="name">Sneha</div>
+                <div class="title">Medical Student (2022)</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- Testimonial 2 -->
+       
+     
+   <!--  Testimonials ends -->
+
+   <!--  Countries End -->
+      <!--services section start -->
+   
+      <!--services section end -->
+      <!--gallery section start -->
+    
+      <!--courses section start -->
+      <section class="medical-colleges">
+        <div class="container">
+            <header class="section-header">
+                <h1>Top Medical Colleges</h1>
+                <p>Start Exploring All These World's Top Medical Colleges</p>
+            </header>
+
+            <div class="countries-list">
+                <!-- China -->
+                <div class="country-item">
+                    <div class="country-info">
+                        <div class="flag-container">
+                            <img src="https://flagcdn.com/w80/cn.png" alt="China Flag" class="flag">
+                        </div>
+                        <h3 class="country-name">China</h3>
+                    </div>
+                    <div class="connector-line">
+                        <div class="line-inner"></div>
+                    </div>
+                    <a href="404error.html" class="learn-more-btn">Learn More</a>
+                </div>
+
+                <!-- America -->
+                <div class="country-item">
+                    <div class="country-info">
+                        <div class="flag-container">
+                            <img src="https://flagcdn.com/w80/us.png" alt="America Flag" class="flag">
+                        </div>
+                        <h3 class="country-name">America</h3>
+                    </div>
+                    <div class="connector-line">
+                        <div class="line-inner"></div>
+                    </div>
+                    <a href="404error.html" class="learn-more-btn">Learn More</a>
+                </div>
+
+                <!-- Ukraine -->
+                <div class="country-item">
+                    <div class="country-info">
+                        <div class="flag-container">
+                            <img src="https://flagcdn.com/w80/ua.png" alt="Ukraine Flag" class="flag">
+                        </div>
+                        <h3 class="country-name">Ukraine</h3>
+                    </div>
+                    <div class="connector-line">
+                        <div class="line-inner"></div>
+                    </div>
+                    <a href="404error.html" class="learn-more-btn">Learn More</a>
+                </div>
+
+                <!-- Russia -->
+                <div class="country-item">
+                    <div class="country-info">
+                        <div class="flag-container">
+                            <img src="https://flagcdn.com/w80/ru.png" alt="Russia Flag" class="flag">
+                        </div>
+                        <h3 class="country-name">Russia</h3>
+                    </div>
+                    <div class="connector-line">
+                        <div class="line-inner"></div>
+                    </div>
+                    <a href="404error.html" class="learn-more-btn">Learn More</a>
+                </div>
+
+                <!-- Philippines -->
+                <div class="country-item">
+                    <div class="country-info">
+                        <div class="flag-container">
+                            <img src="https://flagcdn.com/w80/ph.png" alt="Philippines Flag" class="flag">
+                        </div>
+                        <h3 class="country-name">Philippines</h3>
+                    </div>
+                    <div class="connector-line">
+                        <div class="line-inner"></div>
+                    </div>
+                    <a href="404error.html" class="learn-more-btn">Learn More</a>
+                </div>
+
+                <!-- Kyrgyzstan -->
+                <div class="country-item">
+                    <div class="country-info">
+                        <div class="flag-container">
+                            <img src="https://flagcdn.com/w80/kg.png" alt="Kyrgyzstan Flag" class="flag">
+                        </div>
+                        <h3 class="country-name">Kyrgyzstan</h3>
+                    </div>
+                    <div class="connector-line">
+                        <div class="line-inner"></div>
+                    </div>
+                    <a href="404error.html" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- <div id="spinner-overlay">
+        <div class="spinner-container">
+            <div class="spinner">
+                <i class="fas fa-cog fa-spin"></i>
+                <i class="fas fa-cog fa-spin-pulse secondary-cog"></i>
+            </div>
+        </div>
+    </div> -->
+        
+    <div id="spinner-overlay">
+        <div class="spinner-container">
+            <div class="spinner-box">
+                <div class="spinner-outer">
+                    <div class="spinner-inner">
+                        <div class="spinner-center"></div>
+                    </div>
+                </div>
+                <div class="pulse-ring"></div>
+                <div class="loading-text">LOADING</div>
+                <div class="dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!--courses section end -->
+      <!--events section start -->
+   
+      <!--events section end -->
+    
+      <!--students section end -->
+      <!--newsletter section start -->
+        <!-- Footer section starts  -->
+
+
+        <footer class="page_bottom_wrap">
+            <div class="footer_container">
+                <div class="footer_content_grid">
+                    <!-- Contact Info Column -->
+                    <div class="footer_column contact_section">
+                        <h3 class="footer_heading">General Inquiries</h3>
+                        <div class="contact_details">
+                            <div class="contact_item">
+                                <span class="contact_label">Phone:</span>
+                                <a href="tel:+917488919466" class="contact_link">+91-7488919466</a>
+                            </div>
+                            <div class="contact_item">
+                                <span class="contact_label">Email:</span>
+                                <a href="mailto:imcconsultancy01@gmail.com" class="contact_link">imcconsultancy01@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Address Column -->
+                    <div class="footer_column address_section">
+                        <h3 class="footer_heading">Office Address</h3>
+                        <address class="address_details">
+                            306, 3rd floor, Living Style Mall<br>
+                            Jasola Vihar, New Delhi-110025<br>
+                            <div class="address_links">
+                                <a href="#" class="address_link">Contact</a> | 
+                                <a href="#" class="address_link">Careers</a>
+                            </div>
+                        </address>
+                    </div>
+        
+                    <!-- Hours Column -->
+                    <div class="footer_column hours_section">
+                        <h3 class="footer_heading">Business Hours</h3>
+                        <div class="hours_details">
+                            <div class="hours_item">
+                                <span class="day_range">MON to FRI:</span>
+                                <span class="hour_range">10AM to 6PM</span>
+                            </div>
+                            <div class="hours_item">
+                                <span class="day_range">SAT:</span>
+                                <span class="hour_range">9AM to 12PM</span>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- Newsletter Column -->
+                    <div class="footer_column newsletter_section">
+                        <h3 class="footer_heading">Get Your Free Weekly Tips!</h3>
+                        <div class="newsletter_form">
+                            <input type="email" placeholder="Your Email" class="newsletter_input">
+                            <button type="submit" class="newsletter_button">
+                                <span>Subscribe</span>
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </div>
+                        <div class="social_icons">
+                            <a href="#" class="social_icon twitter" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social_icon facebook" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social_icon instagram" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social_icon pinterest" aria-label="Pinterest">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                            <a href="#" class="social_icon rss" aria-label="RSS">
+                                <i class="fas fa-rss"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright_bar">
+                <p class="copyright_text">© Copyright - IMC Educational Consultancy</p>
+            </div>
+        </footer>
+      <!--footer section end -->
+      <!--copyright section start -->
+  
+      <!--copyright section end -->
+      <!-- Javascript files-->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+      <!-- javascript --> 
+      <script src="js/owl.carousel.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+
+      <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+      <script>
+          // Particles JS Configuration
+          particlesJS("premium-edu-particles", {
+              "particles": {
+                  "number": {
+                      "value": 60,
+                      "density": {
+                          "enable": true,
+                          "value_area": 800
+                      }
+                  },
+                  "color": {
+                      "value": "#ffffff"
+                  },
+                  "shape": {
+                      "type": "circle",
+                      "stroke": {
+                          "width": 0,
+                          "color": "#000000"
+                      },
+                      "polygon": {
+                          "nb_sides": 5
+                      }
+                  },
+                  "opacity": {
+                      "value": 0.2,
+                      "random": true,
+                      "anim": {
+                          "enable": true,
+                          "speed": 1,
+                          "opacity_min": 0.1,
+                          "sync": false
+                      }
+                  },
+                  "size": {
+                      "value": 3,
+                      "random": true,
+                      "anim": {
+                          "enable": true,
+                          "speed": 2,
+                          "size_min": 0.1,
+                          "sync": false
+                      }
+                  },
+                  "line_linked": {
+                      "enable": true,
+                      "distance": 150,
+                      "color": "#ffffff",
+                      "opacity": 0.1,
+                      "width": 1
+                  },
+                  "move": {
+                      "enable": true,
+                      "speed": 1,
+                      "direction": "none",
+                      "random": true,
+                      "straight": false,
+                      "out_mode": "out",
+                      "bounce": false,
+                      "attract": {
+                          "enable": false,
+                          "rotateX": 600,
+                          "rotateY": 1200
+                      }
+                  }
+              },
+              "interactivity": {
+                  "detect_on": "canvas",
+                  "events": {
+                      "onhover": {
+                          "enable": true,
+                          "mode": "grab"
+                      },
+                      "onclick": {
+                          "enable": false,
+                          "mode": "push"
+                      },
+                      "resize": true
+                  },
+                  "modes": {
+                      "grab": {
+                          "distance": 140,
+                          "line_linked": {
+                              "opacity": 0.4
+                          }
+                      }
+                  }
+              },
+              "retina_detect": true
+          });
+      
+          // Slide functionality
+          let premiumEduSlideIndex = 0;
+          const premiumEduSlider = document.getElementById('premium-edu-slider');
+          const premiumEduSlides = document.querySelectorAll('.premium-edu-slide');
+          const premiumEduDots = document.querySelectorAll('.premium-edu-dot');
+          const premiumEduProgressBar = document.getElementById('premium-edu-progress-bar');
+          let premiumEduSlideInterval;
+          const premiumEduSlideDuration = 6000; // 6 seconds per slide
+      
+          // Initialize animations for the first slide
+          function premiumEduInitializeFirstSlide() {
+              // Add active class to first slide
+              premiumEduSlides[0].classList.add('active');
+              
+              // Animate elements in the first slide
+              const elements = premiumEduSlides[0].querySelectorAll('.premium-edu-icon-container, .premium-edu-school-type, .premium-edu-heading, .premium-edu-apply-btn');
+              elements.forEach((el, index) => {
+                  setTimeout(() => {
+                      el.style.animation = `premium-edu-fadeUp 0.8s forwards`;
+                  }, index * 200);
+              });
+          }
+      
+          // Run on page load
+          document.addEventListener('DOMContentLoaded', function() {
+              premiumEduInitializeFirstSlide();
+              premiumEduStartProgressBar();
+              premiumEduStartSlideTimer();
+          });
+      
+          // Show specific slide
+          function premiumEduShowSlide(n) {
+              // Ensure n is within bounds - FIXED LOGIC HERE
+              if (n >= premiumEduSlides.length) {
+                  premiumEduSlideIndex = 0;
+              } else if (n < 0) {
+                  premiumEduSlideIndex = premiumEduSlides.length - 1;
+              } else {
+                  premiumEduSlideIndex = n;
+              }
+      
+              // Move slider
+              premiumEduSlider.style.transform = `translateX(-${premiumEduSlideIndex * 33.33}%)`;
+      
+              // Update active slide class
+              premiumEduSlides.forEach((slide, i) => {
+                  slide.classList.toggle('active', i === premiumEduSlideIndex);
+                  
+                  // Reset animations for all slides
+                  const elements = slide.querySelectorAll('.premium-edu-icon-container, .premium-edu-school-type, .premium-edu-heading, .premium-edu-apply-btn');
+                  elements.forEach(el => {
+                      el.style.animation = 'none';
+                  });
+              });
+      
+              // Trigger animations for current slide
+              setTimeout(() => {
+                  const currentElements = premiumEduSlides[premiumEduSlideIndex].querySelectorAll('.premium-edu-icon-container, .premium-edu-school-type, .premium-edu-heading, .premium-edu-apply-btn');
+                  currentElements.forEach((el, index) => {
+                      setTimeout(() => {
+                          el.style.animation = `premium-edu-fadeUp 0.8s forwards`;
+                      }, index * 200);
+                  });
+              }, 100);
+              
+              // Update dots
+              premiumEduDots.forEach((dot, i) => {
+                  dot.classList.toggle('active', i === premiumEduSlideIndex);
+              });
+      
+              // Reset and start progress bar
+              premiumEduResetProgressBar();
+              premiumEduStartProgressBar();
+          }
+      
+          // Navigate to specific slide (dot navigation)
+          function premiumEduCurrentSlide(n) {
+              clearInterval(premiumEduSlideInterval);
+              premiumEduShowSlide(n);
+              premiumEduStartSlideTimer();
+          }
+      
+          // Navigate with arrows
+          function premiumEduChangeSlide(step) {
+              clearInterval(premiumEduSlideInterval);
+              premiumEduShowSlide(premiumEduSlideIndex + step);
+              premiumEduStartSlideTimer();
+          }
+      
+          // Auto slide timer
+          function premiumEduStartSlideTimer() {
+              clearInterval(premiumEduSlideInterval);
+              premiumEduSlideInterval = setInterval(() => {
+                  premiumEduSlideIndex++;
+                  premiumEduShowSlide(premiumEduSlideIndex);
+              }, premiumEduSlideDuration);
+          }
+      
+          // Progress bar functionality
+          function premiumEduStartProgressBar() {
+              premiumEduProgressBar.style.width = '0%';
+              premiumEduProgressBar.style.transition = `width ${premiumEduSlideDuration}ms linear`;
+              setTimeout(() => {
+                  premiumEduProgressBar.style.width = '100%';
+              }, 50);
+          }
+      
+          function premiumEduResetProgressBar() {
+              premiumEduProgressBar.style.width = '0%';
+              premiumEduProgressBar.style.transition = 'none';
+          }
+      
+          // Handle keyboard navigation
+          document.addEventListener('keydown', function(e) {
+              if (e.key === 'ArrowLeft') {
+                  premiumEduChangeSlide(-1);
+              } else if (e.key === 'ArrowRight') {
+                  premiumEduChangeSlide(1);
+              }
+          });
+      
+          // Pause slideshow on hover
+          document.querySelector('.premium-edu-banner').addEventListener('mouseenter', function() {
+              clearInterval(premiumEduSlideInterval);
+              premiumEduProgressBar.style.transition = 'none';
+          });
+      
+          document.querySelector('.premium-edu-banner').addEventListener('mouseleave', function() {
+              premiumEduStartSlideTimer();
+              premiumEduStartProgressBar();
+          });
+      
+          // Add scroll functionality to scroll indicator
+          document.querySelector('.premium-edu-scroll-indicator').addEventListener('click', function() {
+              window.scrollTo({
+                  top: window.innerHeight,
+                  behavior: 'smooth'
+              });
+          });
+
+
+          document.querySelector('.edu-navbar__toggler').addEventListener('click', function() {
+            const navbarCollapse = document.querySelector('.edu-navbar');
+            navbarCollapse.classList.toggle('edu-navbar__collapse--show');
+        });
+
+        // Handle dropdown toggles on mobile
+        if (window.innerWidth < 992) {
+            // Main dropdown toggle
+            const navItems = document.querySelectorAll('.edu-nav__item');
+            navItems.forEach(item => {
+                if (item.querySelector('.edu-dropdown')) {
+                    const link = item.querySelector('.edu-nav__link');
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth < 992) {
+                            e.preventDefault();
+                            item.classList.toggle('edu-nav__item--open');
+                            
+                            // Close other open dropdowns
+                            navItems.forEach(otherItem => {
+                                if (otherItem !== item && otherItem.classList.contains('edu-nav__item--open')) {
+                                    otherItem.classList.remove('edu-nav__item--open');
+                                }
+                            });
+                        }
+                    });
+                }
+            });
+
+            // Sub-dropdown toggle
+            const subDropdowns = document.querySelectorAll('.edu-subdropdown');
+            subDropdowns.forEach(subDropdown => {
+                const subLink = subDropdown.querySelector('.edu-dropdown__item');
+                subLink.addEventListener('click', function(e) {
+                    if (window.innerWidth < 992) {
+                        e.preventDefault();
+                        subDropdown.classList.toggle('edu-subdropdown--open');
+                        
+                        // Close other open subdropdowns within same dropdown
+                        const parentDropdown = subDropdown.closest('.edu-dropdown');
+                        const siblingSubDropdowns = parentDropdown.querySelectorAll('.edu-subdropdown');
+                        siblingSubDropdowns.forEach(siblingSubDropdown => {
+                            if (siblingSubDropdown !== subDropdown && siblingSubDropdown.classList.contains('edu-subdropdown--open')) {
+                                siblingSubDropdown.classList.remove('edu-subdropdown--open');
+                            }
+                        });
+                    }
+                });
+            });
+        }
+
+        // Update navigation functionality on window resize
+        window.addEventListener('resize', function() {
+            const navbarCollapse = document.querySelector('.edu-navbar');
+            const navItems = document.querySelectorAll('.edu-nav__item');
+            const subDropdowns = document.querySelectorAll('.edu-subdropdown');
+            
+            if (window.innerWidth >= 992) {
+                // Reset mobile-specific classes when resizing to desktop
+                navbarCollapse.classList.remove('edu-navbar__collapse--show');
+                navItems.forEach(item => item.classList.remove('edu-nav__item--open'));
+                subDropdowns.forEach(subDropdown => subDropdown.classList.remove('edu-subdropdown--open'));
+            }
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            // Observe all country items
+            document.querySelectorAll('.country-item').forEach(item => {
+                observer.observe(item);
+            });
+
+            // Observe header
+            observer.observe(document.querySelector('.section-header'));
+        });
+
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+    const spinnerOverlay = document.getElementById('spinner-overlay');
+    const demoLink = document.querySelector('.demo-link');
+    const backButton = document.getElementById('back-button');
+    
+    // Function to show spinner
+    function showSpinner() {
+        spinnerOverlay.style.visibility = 'visible';
+        spinnerOverlay.style.opacity = '1';
+        
+        // Hide spinner after 1.9 seconds
+        setTimeout(() => {
+            spinnerOverlay.style.opacity = '0';
+            setTimeout(() => {
+                spinnerOverlay.style.visibility = 'hidden';
+            }, 300);
+        }, 1900);
+    }
+    
+    // Show spinner when demo link is clicked
+    demoLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        showSpinner();
+    });
+    
+    // Making the back button functional (for demo)
+    backButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        showSpinner();
+        // In a real implementation, you would redirect after the spinner
+        // setTimeout(() => window.location.href = 'your-home-page.html', 1900);
+    });
+    
+    // Add click event to all links (excluding the demo links)
+    document.querySelectorAll('a:not(.demo-link):not(#back-button)').forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Only process actual links, not "#" or javascript: links
+            if (href && href !== '#' && !href.startsWith('javascript')) {
+                e.preventDefault();
+                showSpinner();
+                
+                // Navigate to the link after spinner animation
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 1900);
+            }
+        });
+    });
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const spinnerOverlay = document.getElementById('spinner-overlay');
+    
+    // Function to show spinner
+    function showSpinner() {
+        spinnerOverlay.style.visibility = 'visible';
+        spinnerOverlay.style.opacity = '1';
+        
+        // Hide spinner after 1.9 seconds
+        setTimeout(() => {
+            spinnerOverlay.style.opacity = '0';
+            setTimeout(() => {
+                spinnerOverlay.style.visibility = 'hidden';
+            }, 300);
+        }, 1900);
+    }
+    
+    // Add click event to all links (except those with # or javascript: hrefs)
+    document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        
+        // Skip links that are just anchors or javascript functions
+        if (href && href !== '#' && !href.startsWith('javascript')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showSpinner();
+                
+                // Navigate to the link after spinner animation
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 1900);
+            });
+        }
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const spinnerOverlay = document.getElementById('spinner-overlay');
+    
+    // Function to show spinner
+    function showSpinner() {
+        spinnerOverlay.style.visibility = 'visible';
+        spinnerOverlay.style.opacity = '1';
+        
+        // Hide spinner after 1.9 seconds
+        setTimeout(() => {
+            spinnerOverlay.style.opacity = '0';
+            setTimeout(() => {
+                spinnerOverlay.style.visibility = 'hidden';
+            }, 300);
+        }, 1900);
+    }
+    
+    // Add click event to all links (except those with # or javascript: hrefs)
+    document.querySelectorAll('a').forEach(link => {
+        const href = link.getAttribute('href');
+        
+        // Skip links that are just anchors or javascript functions
+        if (href && href !== '#' && !href.startsWith('javascript')) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                showSpinner();
+                
+                // Navigate to the link after spinner animation
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 1900);
+            });
+        }
+    });
+});
+
+
+document.querySelector('.back_to_top').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+
+
+//  js for stikcy button
+
+document.addEventListener('DOMContentLoaded', function() {
+    const admissionButton = document.getElementById('admissionButton');
+    const applicationForm = document.getElementById('applicationForm');
+    const formCloseButton = document.getElementById('formCloseButton');
+    
+    // Toggle form on button click
+    admissionButton.addEventListener('click', function() {
+        applicationForm.classList.toggle('active');
+        
+        // Add animation to form groups when form is active
+        if (applicationForm.classList.contains('active')) {
+            const formGroups = document.querySelectorAll('.form-group');
+            formGroups.forEach((group, index) => {
+                group.style.animationDelay = `${0.1 * (index + 1)}s`;
+            });
+        }
+    });
+    
+    // Close form when close button is clicked
+    formCloseButton.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent event bubbling
+        applicationForm.classList.remove('active');
+    });
+    
+    // Prevent form from closing when clicking inside it
+    applicationForm.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+    
+    // Form validation and submission
+    const applicationFormElement = document.querySelector('.application-form');
+    applicationFormElement.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Add success animation
+        const submitButton = document.querySelector('.submit-button');
+        submitButton.innerHTML = '<span>SUBMITTED</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        submitButton.style.backgroundColor = '#28a745';
+        
+        // Reset form after delay
+        setTimeout(() => {
+            applicationFormElement.reset();
+            submitButton.innerHTML = '<span>SUBMIT</span> <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+            submitButton.style.backgroundColor = '#0e86e7';
+            
+            // Optional: close form after submission
+            // applicationForm.classList.remove('active');
+        }, 2000);
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const admissionButton = document.getElementById('admissionButton');
+    const applicationForm = document.getElementById('applicationForm');
+    const formCloseButton = document.getElementById('formCloseButton');
+    
+    // Show form when hovering over the button
+    admissionButton.addEventListener('mouseenter', function() {
+        applicationForm.classList.add('active');
+        
+        // Add animation to form groups when form is active
+        const formGroups = document.querySelectorAll('.form-group');
+        formGroups.forEach((group, index) => {
+            group.style.animationDelay = `${0.1 * (index + 1)}s`;
+        });
+    });
+    
+    // Alternative: Toggle form on button click (in addition to hover)
+    admissionButton.addEventListener('click', function() {
+        applicationForm.classList.toggle('active');
+    });
+    
+    // Close form when close button is clicked
+    formCloseButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation(); // Prevent event bubbling
+        applicationForm.classList.remove('active');
+    });
+    
+    // Prevent form from closing when clicking inside it
+    applicationForm.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+    
+    // Close the form when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!applicationForm.contains(e.target) && e.target !== admissionButton) {
+            applicationForm.classList.remove('active');
+        }
+    });
+    
+    // Form validation and submission
+    const applicationFormElement = document.querySelector('.application-form');
+    applicationFormElement.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Add success animation
+        const submitButton = document.querySelector('.submit-button');
+        submitButton.innerHTML = '<span>SUBMITTED</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        submitButton.style.backgroundColor = '#28a745';
+        
+        // Reset form after delay
+        setTimeout(() => {
+            applicationFormElement.reset();
+            submitButton.innerHTML = '<span>SUBMIT</span> <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+            submitButton.style.backgroundColor = '#0e86e7';
+            
+            // Close form after submission
+            applicationForm.classList.remove('active');
+        }, 2000);
+    });
+    
+    // Keep form open when mouse is over form
+    applicationForm.addEventListener('mouseenter', function() {
+        applicationForm.classList.add('active');
+    });
+    
+    // Optional: Close form when mouse leaves both button and form
+    // Uncomment this if you want the form to close when mouse leaves
+    /*
+    const container = document.querySelector('.sticky-application-container');
+    container.addEventListener('mouseleave', function() {
+        setTimeout(() => {
+            applicationForm.classList.remove('active');
+        }, 500); // Small delay to make interaction smoother
+    });
+    */
+});
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const admissionButton = document.getElementById('admissionButton');
+    const applicationForm = document.getElementById('applicationForm');
+    const formCloseButton = document.getElementById('formCloseButton');
+    
+    // Toggle form on button click
+    admissionButton.addEventListener('click', function() {
+        applicationForm.classList.toggle('active');
+        
+        // Add animation to form groups when form is active
+        if (applicationForm.classList.contains('active')) {
+            const formGroups = document.querySelectorAll('.form-group');
+            formGroups.forEach((group, index) => {
+                group.style.animationDelay = `${0.1 * (index + 1)}s`;
+            });
+        }
+    });
+    
+    // Close form when close button is clicked
+    formCloseButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation(); // Prevent event bubbling
+        applicationForm.classList.remove('active');
+    });
+    
+    // Prevent form from closing when clicking inside it
+    applicationForm.addEventListener('click', function(e) {
+        e.stopPropagation();
+    });
+    
+    // Keep form visible when hovering over it
+    applicationForm.addEventListener('mouseenter', function() {
+        applicationForm.classList.add('active');
+    });
+    
+    // Show form when hovering over button
+    admissionButton.addEventListener('mouseenter', function() {
+        applicationForm.classList.add('active');
+    });
+    
+    // Form validation and submission
+    const applicationFormElement = document.querySelector('.application-form');
+    applicationFormElement.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Add success animation
+        const submitButton = document.querySelector('.submit-button');
+        submitButton.innerHTML = '<span>SUBMITTED</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+        submitButton.style.backgroundColor = '#28a745';
+        
+        // Reset form after delay
+        setTimeout(() => {
+            applicationFormElement.reset();
+            submitButton.innerHTML = '<span>SUBMIT</span> <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+            submitButton.style.backgroundColor = '#0e86e7';
+            
+            // Close form after submission
+            applicationForm.classList.remove('active');
+        }, 2000);
+    });
+    
+    // Optional: Close form when mouse leaves both form and button
+    const container = document.querySelector('.sticky-application-container');
+    container.addEventListener('mouseleave', function() {
+        setTimeout(() => {
+            applicationForm.classList.remove('active');
+        }, 300); // Small delay to make interaction smoother
+    });
+    
+    // Close the form when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!applicationForm.contains(e.target) && e.target !== admissionButton) {
+            applicationForm.classList.remove('active');
+        }
+    });
+});
+      </script>
+   </body>
+</html>

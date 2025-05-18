@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #111;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        /* 404 Page Styles */
+        .container {
+            text-align: center;
+            max-width: 800px;
+            width: 100%;
+            padding: 2rem 1rem;
+        }
+
+        .error-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .error-code {
+            font-size: clamp(5rem, 15vw, 10rem);
+            font-weight: 700;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            margin-bottom: 1rem;
+            animation: pulse 2s infinite;
+            line-height: 1;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.9; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(1); opacity: 0.9; }
+        }
+
+        h1 {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        p {
+            margin-bottom: 2rem;
+            font-size: clamp(0.9rem, 3vw, 1.1rem);
+            color: #aaa;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background: white;
+            color: black;
+            padding: clamp(0.6rem, 2vw, 0.8rem) clamp(1.2rem, 3vw, 1.8rem);
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+            margin-right: 15px;
+            letter-spacing: 1px;
+            border: 2px solid white;
+            margin-bottom: 15px; /* Added for mobile */
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(255, 255, 255, 0.2);
+            background: transparent;
+            color: white;
+        }
+
+        a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+            display: inline-block;
+        }
+
+        a:hover {
+            color: white;
+        }
+
+        /* Robot animation */
+        .robot {
+            width: clamp(80px, 25vw, 120px);
+            height: clamp(120px, 35vw, 180px);
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .robot-head {
+            width: clamp(50px, 15vw, 80px);
+            height: clamp(50px, 15vw, 80px);
+            background: #fff;
+            border-radius: 15px;
+            position: relative;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: headBob 4s ease-in-out infinite;
+        }
+
+        @keyframes headBob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .antenna {
+            width: clamp(3px, 1vw, 5px);
+            height: clamp(12px, 4vw, 20px);
+            background: #aaa;
+            position: absolute;
+            top: clamp(-12px, -4vw, -20px);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .antenna::after {
+            content: '';
+            width: clamp(6px, 2vw, 10px);
+            height: clamp(6px, 2vw, 10px);
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: clamp(-5px, -1.5vw, -8px);
+            left: 50%;
+            transform: translateX(-50%);
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .eyes {
+            display: flex;
+            justify-content: space-around;
+            padding: clamp(12px, 4vw, 20px) clamp(6px, 2vw, 10px);
+        }
+
+        .eye {
+            width: clamp(12px, 4vw, 20px);
+            height: clamp(12px, 4vw, 20px);
+            background: #000;
+            border-radius: 50%;
+            position: relative;
+            animation: blink 3s infinite;
+        }
+
+        .eye::after {
+            content: '';
+            width: clamp(4px, 1.5vw, 7px);
+            height: clamp(4px, 1.5vw, 7px);
+            background: white;
+            border-radius: 50%;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+        }
+
+        .mouth {
+            width: clamp(18px, 6vw, 30px);
+            height: clamp(3px, 1vw, 5px);
+            background: #000;
+            margin: clamp(6px, 2vw, 10px) auto;
+            border-radius: clamp(3px, 1vw, 5px);
+        }
+
+        .robot-body {
+            width: clamp(60px, 20vw, 100px);
+            height: clamp(48px, 16vw, 80px);
+            background: #eee;
+            margin: clamp(6px, 2vw, 10px) auto;
+            border-radius: 10px;
+            position: relative;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+            padding-top: clamp(12px, 4vw, 20px);
+        }
+
+        .button {
+            width: clamp(9px, 3vw, 15px);
+            height: clamp(9px, 3vw, 15px);
+            background: #333;
+            border-radius: 50%;
+            animation: colorChange 4s infinite;
+        }
+
+        @keyframes colorChange {
+            0% { background: white; }
+            25% { background: #ddd; }
+            50% { background: #aaa; }
+            75% { background: #777; }
+            100% { background: white; }
+        }
+
+        .arms {
+            position: absolute;
+            width: 100%;
+            top: clamp(80px, 25vw, 130px);
+        }
+
+        .arm {
+            width: clamp(12px, 4vw, 20px);
+            height: clamp(36px, 12vw, 60px);
+            background: #eee;
+            position: absolute;
+            border-radius: 10px;
+        }
+
+        .left-arm {
+            left: clamp(9px, 3vw, 15px);
+            transform-origin: top center;
+            animation: wave 3s infinite;
+        }
+
+        .right-arm {
+            right: clamp(9px, 3vw, 15px);
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: rotate(0); }
+            50% { transform: rotate(-20deg); }
+        }
+
+        /* Background effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(50, 50, 50, 0.3) 0%, rgba(0, 0, 0, 0.7) 100%);
+            z-index: 0;
+        }
+
+        /* Spinner Overlay Styles */
+        #spinner-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .spinner-container {
+            text-align: center;
+            position: relative;
+            width: clamp(100px, 30vw, 150px);
+            height: clamp(100px, 30vw, 150px);
+        }
+
+        .spinner-box {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinner-outer {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            border: clamp(2px, 1vw, 4px) solid transparent;
+            border-top: clamp(2px, 1vw, 4px) solid white;
+            border-right: clamp(2px, 1vw, 4px) solid white;
+            border-radius: 50%;
+            animation: spin 2s linear infinite;
+        }
+
+        .spinner-inner {
+            position: absolute;
+            width: 60%;
+            height: 60%;
+            border: clamp(2px, 1vw, 4px) solid transparent;
+            border-top: clamp(2px, 1vw, 4px) solid white;
+            border-left: clamp(2px, 1vw, 4px) solid white;
+            border-radius: 50%;
+            animation: spin-reverse 1.5s linear infinite;
+        }
+
+        .spinner-center {
+            position: absolute;
+            width: 20%;
+            height: 20%;
+            background: white;
+            border-radius: 50%;
+            animation: pulse 1s ease-in-out infinite alternate;
+        }
+
+        .pulse-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: pulse-ring 2s ease-out infinite;
+        }
+
+        .loading-text {
+            position: absolute;
+            width: 100%;
+            bottom: -40px;
+            color: white;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            letter-spacing: clamp(2px, 1vw, 4px);
+            font-size: clamp(10px, 3vw, 14px);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            text-align: center;
+        }
+
+        .dots {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .dot {
+            width: clamp(4px, 1.5vw, 6px);
+            height: clamp(4px, 1.5vw, 6px);
+            margin: 0 3px;
+            border-radius: 50%;
+            background-color: white;
+            display: inline-block;
+            opacity: 0;
+            animation: dot-fade 1.5s infinite;
+        }
+
+        .dot:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+
+        .dot:nth-child(3) {
+            animation-delay: 1s;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes spin-reverse {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(-360deg); }
+        }
+
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        @keyframes dot-fade {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        /* Add a subtle shadow effect for depth */
+        .spinner-box::before {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            border-radius: 50%;
+            box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.1);
+            animation: shadow-pulse 2s infinite alternate;
+        }
+
+        @keyframes shadow-pulse {
+            from { box-shadow: 0 0 30px 2px rgba(255, 255, 255, 0.1); }
+            to { box-shadow: 0 0 40px 8px rgba(255, 255, 255, 0.2); }
+        }
+
+        /* Media Queries for Better Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .btn-primary {
+                display: block;
+                margin: 0 auto 15px;
+                max-width: 250px;
+            }
+            
+            a:not(.btn-primary) {
+                display: block;
+                margin-top: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .error-code {
+                margin-bottom: 0.5rem;
+            }
+            
+            .robot {
+                margin-bottom: 1rem;
+            }
+            
+            h1 {
+                margin-bottom: 0.8rem;
+            }
+            
+            p {
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-height: 600px) {
+            .robot {
+                transform: scale(0.8);
+                margin-bottom: 1rem;
+            }
+            
+            .error-code {
+                margin-bottom: 0.5rem;
+            }
+            
+            p {
+                margin-bottom: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Spinner Overlay -->
+    <div id="spinner-overlay">
+        <div class="spinner-container">
+            <div class="spinner-box">
+                <div class="spinner-outer"></div>
+                <div class="spinner-inner"></div>
+                <div class="spinner-center"></div>
+                <div class="pulse-ring"></div>
+                <div class="loading-text">LOADING</div>
+                <div class="dots">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="error-container">
+            <div class="error-code">404</div>
+            <div class="robot">
+                <div class="robot-head">
+                    <div class="antenna"></div>
+                    <div class="eyes">
+                        <div class="eye"></div>
+                        <div class="eye"></div>
+                    </div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="robot-body">
+                    <div class="buttons">
+                        <div class="button"></div>
+                        <div class="button"></div>
+                        <div class="button"></div>
+                    </div>
+                </div>
+                <div class="arms">
+                    <div class="arm left-arm"></div>
+                    <div class="arm right-arm"></div>
+                </div>
+            </div>
+            <h1>Oops! Page Not Found</h1>
+            <p>The page you are looking for might be under construction or doesn't exist yet.</p>
+            <a href="index.html" class="btn-primary" id="back-button">Go Back Home</a>
+            <a href="https://www.linkedin.com/in/monis-raza-0552b715a/">Designed by Monis & Sahal</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const spinnerOverlay = document.getElementById('spinner-overlay');
+            const backButton = document.getElementById('back-button');
+            
+            // Function to show spinner
+            function showSpinner() {
+                spinnerOverlay.style.visibility = 'visible';
+                spinnerOverlay.style.opacity = '1';
+                
+                // Hide spinner after 1.9 seconds
+                setTimeout(() => {
+                    spinnerOverlay.style.opacity = '0';
+                    setTimeout(() => {
+                        spinnerOverlay.style.visibility = 'hidden';
+                    }, 300);
+                }, 1900);
+            }
+            
+            // Making the back button functional
+            backButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                showSpinner();
+                setTimeout(() => window.location.href = 'index.html', 1900);
+            });
+            
+            // Add click event to all links (excluding the back button)
+            document.querySelectorAll('a:not(#back-button)').forEach(link => {
+                const href = link.getAttribute('href');
+                
+                // Only process actual links, not "#" or javascript: links
+                if (href && href !== '#' && !href.startsWith('javascript')) {
+                    link.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        showSpinner();
+                        
+                        // Navigate to the link after spinner animation
+                        setTimeout(() => {
+                            window.location.href = href;
+                        }, 1900);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
