@@ -16,9 +16,11 @@
       <!-- bootstrap css -->
       <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
       <!-- style css -->
-      <link rel="stylesheet" type="text/css" href="css/style.css">
-      <link rel="stylesheet" href="css/updatedcss.css">
+      <link rel="stylesheet" type="text/css" href="/css/style.css">
+      <link rel="stylesheet" href="/css/updatedcss.css">
       <!-- Responsive-->
+
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
       <link rel="stylesheet" href="css/responsive.css">
       <!-- fevicon -->
       <link rel="icon" href="images/fevicon.png" type="image/gif" />
@@ -70,8 +72,10 @@
     background-color: #ffffff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 10px 0;
-    position: relative;
-    z-index: 1000; /* Ensure header is above other content */
+    position: fixed;
+    z-index: 1999;
+    top: 40px;
+    left: 0;
 }
 
 /* Container */
@@ -1312,7 +1316,13 @@
       width: 280px;
   }
 }
-.logo{
+
+    
+ /*  css for collegs top  end */
+
+
+
+ .logo{
     width:50px;
  }
 
@@ -5707,8 +5717,9 @@ opacity: 0;
   }
   
   @media screen and (max-width: 576px) {
+    /* CHANGED: Maintain 2-column grid on mobile (2×2 layout) */
     .features-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 15px;
     }
     
@@ -6158,15 +6169,243 @@ opacity: 0;
 
   /*   footer css */
 
+  .spinner-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #2563eb;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
 
 
-    
- /*  css for collegs top  end */
+   /* WhatsApp button styling */
+   .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            z-index: 2001;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
 
+        /* WhatsApp icon styling */
+        .whatsapp-float i {
+            font-size: 30px;
+        }
+
+        /* Spin animation on hover for the button */
+        .whatsapp-float:hover {
+            transform: rotate(360deg);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Spinner overlay styling */
+        .whatsapp-spinner-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        /* Unique spinner styling */
+        .whatsapp-unique-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #25D366;
+            border-radius: 50%;
+            animation: whatsapp-spin 1s linear infinite;
+        }
+
+        /* Spinner animation */
+        @keyframes whatsapp-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive design for smaller screens */
+        @media screen and (max-width: 768px) {
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .whatsapp-float i {
+                font-size: 25px;
+            }
+            .whatsapp-unique-spinner {
+                width: 40px;
+                height: 40px;
+                border-width: 4px;
+            }
+        }
+  /* Top News Bar */
+
+ 
+  .top-news-bar {
+    background-color: #2A2A2A;
+      color: #ffffff;
+      padding: 8px 0;
+      font-size: 14px;
+      overflow: hidden;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2000;
+      white-space: nowrap;
+  }
+
+    .news-content {
+      display: inline-block;
+      padding-left: 100%;
+    }
+
+    .top-news-bar span {
+      color: #ffffff;
+      margin: 0 20px;
+    }
+
+    .top-news-bar a {
+      color: #00d4ff;
+      text-decoration: none;
+      margin: 0 20px;
+      transition: color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .top-news-bar a:hover {
+      color: #ffcc00;
+    }
+
+    /* Full Page Spinner */
+    .unique-spinner-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 2000;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .unique-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid #00d4ff;
+      border-top: 4px solid transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Thin Line */
+    .thin-line {
+      height: 2px;
+      background: linear-gradient(to right, #00d4ff, #ffcc00);
+      width: 100%;
+    }
+
+    /* Mobile Sliding Animation */
+    @media (max-width: 768px) {
+      .top-news-bar {
+        padding: 10px 0;
+      }
+
+      .news-content {
+        animation: slide-left 20s linear infinite;
+      }
+
+      @keyframes slide-left {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+
+      .top-news-bar a, .top-news-bar span {
+        margin: 0 15px;
+      }
+    }
+
+    /* Ensure static layout on non-mobile devices */
+    @media (min-width: 769px) {
+      .top-news-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .news-content {
+        padding-left: 0;
+      }
+    }
 
    </style>
    <body>
-
+    <div id="newContainer">
+      <div class="top-news-bar">
+        <div class="news-content">
+          <span>Get Admission in </span>
+          <a href="Uzbekistan.html" onclick="showUniqueSpinner('unique-spinner-uzbekistan', this.href); return false;">Uzbekistan</a>
+          <a href="Kazakistan.html" onclick="showUniqueSpinner('unique-spinner-kazakistan', this.href); return false;">Kazakhstan</a>
+          <a href="MedicalColleges.html" onclick="showUniqueSpinner('unique-spinner-medical', this.href); return false;">International Colleges</a>
+          <a href="IndianColleges.html" onclick="showUniqueSpinner('unique-spinner-india', this.href); return false;">Indian Colleges</a>
+        </div>
+      </div>
+    </div>
+    <!-- Thin Line -->
+    <!-- Spinner Overlay -->
+    <div id="unique-spinner-overlay" class="unique-spinner-overlay">
+      <div class="unique-spinner"></div>
+    </div>
       <header class="edu-header">
         <div class="edu-container">
             <nav class="edu-navbar">
@@ -6308,7 +6547,7 @@ opacity: 0;
                         </div>
                         <p class="premium-edu-school-type">MBBS School</p>
                         <h1 class="premium-edu-heading">Build<br>Your Medical Career</h1>
-                        <a href="404error.html" class="premium-edu-apply-btn">Apply Now</a>
+                        <a href="apply.html" class="premium-edu-apply-btn">Apply Now</a>
                     </div>
                 </div>
                 <div class="premium-edu-slide" id="premium-edu-slide-2">
@@ -6321,7 +6560,7 @@ opacity: 0;
                         </div>
                         <p class="premium-edu-school-type">Engineering School</p>
                         <h1 class="premium-edu-heading">Any<br>Engineering Field You Want</h1>
-                        <a href="404error.html" class="premium-edu-apply-btn">Apply Now</a>
+                        <a href="apply.html" class="premium-edu-apply-btn">Apply Now</a>
                     </div>
                 </div>
                 <div class="premium-edu-slide" id="premium-edu-slide-3">
@@ -6334,7 +6573,7 @@ opacity: 0;
                         </div>
                         <p class="premium-edu-school-type">Management School</p>
                         <h1 class="premium-edu-heading">Any<br>Management Program You Choose</h1>
-                        <a href="404error.html" class="premium-edu-apply-btn">Apply Now</a>
+                        <a href="apply.html" class="premium-edu-apply-btn">Apply Now</a>
                     </div>
                 </div>
             </div>
@@ -6368,119 +6607,15 @@ opacity: 0;
       
       <!--sticky bytton  section start -->
       <div class="sticky-application-container">
-        <!-- Application Form Panel -->
-        <div class="application-form-panel" id="applicationForm">
-            <div class="form-header">
-                <h2 class="form-title">Apply Now</h2>
-                <button class="form-close-button" id="formCloseButton">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="18" y1="6" x2="6" y2="18"></line>
-                        <line x1="6" y1="6" x2="18" y2="18"></line>
-                    </svg>
-                </button>
-            </div>
-            
-            <form class="application-form">
-                <div class="form-group">
-                    <input type="text" id="name" name="name" placeholder="Your Name*" required class="form-input">
-                    <span class="input-focus-effect"></span>
-                </div>
-                
-                <div class="form-group">
-                    <input type="tel" id="mobile" name="mobile" placeholder="Mobile*" required class="form-input">
-                    <span class="input-focus-effect"></span>
-                </div>
-                
-                <div class="form-group">
-                    <input type="email" id="email" name="email" placeholder="Email Address*" required class="form-input">
-                    <span class="input-focus-effect"></span>
-                </div>
-                
-                <div class="form-group">
-                    <input type="text" id="qualification" name="qualification" placeholder="Qualification" class="form-input">
-                    <span class="input-focus-effect"></span>
-                </div>
-                
-                <div class="form-group">
-                    <select id="state" name="state" class="form-select">
-                        <option value="" disabled selected>Select State</option>
-                        <option value="andhra-pradesh">Andhra Pradesh</option>
-                        <option value="arunachal-pradesh">Arunachal Pradesh</option>
-                        <option value="assam">Assam</option>
-                        <option value="bihar">Bihar</option>
-                        <option value="chhattisgarh">Chhattisgarh</option>
-                        <option value="goa">Goa</option>
-                        <option value="gujarat">Gujarat</option>
-                        <option value="haryana">Haryana</option>
-                        <option value="himachal-pradesh">Himachal Pradesh</option>
-                        <option value="jharkhand">Jharkhand</option>
-                        <option value="karnataka">Karnataka</option>
-                        <option value="kerala">Kerala</option>
-                        <option value="madhya-pradesh">Madhya Pradesh</option>
-                        <option value="maharashtra">Maharashtra</option>
-                        <option value="manipur">Manipur</option>
-                        <option value="meghalaya">Meghalaya</option>
-                        <option value="mizoram">Mizoram</option>
-                        <option value="nagaland">Nagaland</option>
-                        <option value="odisha">Odisha</option>
-                        <option value="punjab">Punjab</option>
-                        <option value="rajasthan">Rajasthan</option>
-                        <option value="sikkim">Sikkim</option>
-                        <option value="tamil-nadu">Tamil Nadu</option>
-                        <option value="telangana">Telangana</option>
-                        <option value="tripura">Tripura</option>
-                        <option value="uttar-pradesh">Uttar Pradesh</option>
-                        <option value="uttarakhand">Uttarakhand</option>
-                        <option value="west-bengal">West Bengal</option>
-                        <option value="andaman-nicobar">Andaman and Nicobar Islands</option>
-                        <option value="chandigarh">Chandigarh</option>
-                        <option value="dadra-nagar-haveli">Dadra and Nagar Haveli</option>
-                        <option value="daman-diu">Daman and Diu</option>
-                        <option value="delhi">Delhi</option>
-                        <option value="jammu-kashmir">Jammu and Kashmir</option>
-                        <option value="ladakh">Ladakh</option>
-                        <option value="lakshadweep">Lakshadweep</option>
-                        <option value="puducherry">Puducherry</option>
-                    </select>
-                    <span class="select-arrow"></span>
-                </div>
-                
-                <div class="form-group">
-                    <select id="course" name="course" class="form-select">
-                        <option value="" disabled selected>Select Course</option>
-                        <option value="mbbs">MBBS</option>
-                        <option value="bams">BAMS</option>
-                        <option value="bums">BUMS</option>
-                        <option value="bhms">BHMS</option>
-                        <option value="radiology">Radiology</option>
-                        <option value="bsc-nursing">B.Sc Nursing</option>
-                        <option value="bba">BBA</option>
-                        <option value="mba">MBA</option>
-                        <option value="btech">B.Tech</option>
-                        <option value="barch">B.Arch</option>
-                    </select>
-                    <span class="select-arrow"></span>
-                </div>
-                
-                <div class="form-group">
-                    <textarea id="message" name="message" placeholder="Message" class="form-textarea"></textarea>
-                    <span class="input-focus-effect"></span>
-                </div>
-                
-                <button type="submit" class="submit-button">
-                    <span>SUBMIT</span>
-                    <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                    </svg>
-                </button>
-            </form>
-        </div>
-        
         <!-- Sticky Button -->
-        <button class="sticky-application-button" id="admissionButton">
+        <a href="apply.html" class="sticky-application-button" id="admissionButton">
             <span class="sticky-button-text">Admissions 25-26</span>
-        </button>
+        </a>
+    
+        <!-- Spinner Overlay -->
+        <div class="spinner-overlay" id="spinnerOverlay">
+            <div class="spinner"></div>
+        </div>
     </div>
       <!--stikcy button  section end -->
 
@@ -6565,7 +6700,7 @@ opacity: 0;
                      <h3 class="course-title">MBBS/BDS</h3>
                      <div class="course-info">
                          <p>Medical & Dental Programs</p>
-                         <a href="404error.html" class="learn-more">Learn More <i class="material-icons arrow-icon">arrow_forward</i></a>
+                         <a href="medicalcolleges.html" class="learn-more">Learn More <i class="material-icons arrow-icon">arrow_forward</i></a>
                      </div>
                  </div>
                  
@@ -6783,7 +6918,14 @@ opacity: 0;
    <!--  How it works ends -->
 
   
+   <a class="whatsapp-float" aria-label="Chat with us on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
 
+<!-- Spinner overlay -->
+<div class="whatsapp-spinner-overlay" id="whatsappSpinner">
+    <div class="whatsapp-unique-spinner"></div>
+</div>
 
 
    <!--  Countries starts  -->
@@ -6890,16 +7032,20 @@ opacity: 0;
             <div class="region-section card-style">
                 <h4><i class="fas fa-globe-asia"></i> Asia</h4>
                 <ul class="country-list">
-                    <li><a href="">China</a></li>
+                  <li><a href="Uzbekistan.html">Uzbekistan</a></li>
+                  <li><a href="kazakistan.html">Kazakhstan</a></li>
+                  <li><a href="IndianColleges.html">India</a></li>
+                    <li><a href="404error.html">China</a></li>
+                    
                     <li><a href="404error.html">Russia</a></li>
                     <li><a href="404error.html">Georgia</a></li>
                     <li><a href="404error.html">Nepal</a></li>
-                    <li><a href="404error.html">India</a></li>
+                    
                     <li><a href="404error.html">Philippines</a></li>
                     <li><a href="404error.html">Kyrgyzstan</a></li>
                     <li><a href="404error.html">Bangladesh</a></li>
                     <li><a href="404error.html">Singapore</a></li>
-                    <li><a href="404error.html">Kazakhstan</a></li>
+                    
                     <li><a href="404error.html">Malaysia</a></li>
                 </ul>
             </div>
@@ -7041,6 +7187,60 @@ opacity: 0;
             </header>
 
             <div class="countries-list">
+
+
+              <div class="country-item">
+                <div class="country-info">
+                    <div class="flag-container">
+                        <img src="https://flagcdn.com/w80/uz.png" alt="UzbekistanFlag" class="flag">
+                    </div>
+                    <h3 class="country-name">Uzbekistan</h3>
+                </div>
+                <div class="connector-line">
+                    <div class="line-inner"></div>
+                </div>
+                <a href="Uzbekistan.html" class="learn-more-btn">Learn More</a>
+            </div>
+            <div class="country-item">
+              <div class="country-info">
+                  <div class="flag-container">
+                      <img src="https://flagcdn.com/w80/kg.png" alt="Kyrgyzstan Flag" class="flag">
+                  </div>
+                  <h3 class="country-name">Kyrgyzstan</h3>
+              </div>
+              <div class="connector-line">
+                  <div class="line-inner"></div>
+              </div>
+              <a href="404error.html" class="learn-more-btn">Learn More</a>
+          </div>
+
+
+          <div class="country-item">
+            <div class="country-info">
+                <div class="flag-container">
+                    <img src="https://flagcdn.com/w80/ua.png" alt="Ukraine Flag" class="flag">
+                </div>
+                <h3 class="country-name">Ukraine</h3>
+            </div>
+            <div class="connector-line">
+                <div class="line-inner"></div>
+            </div>
+            <a href="404error.html" class="learn-more-btn">Learn More</a>
+        </div>
+
+        <!-- Russia -->
+        <div class="country-item">
+            <div class="country-info">
+                <div class="flag-container">
+                    <img src="https://flagcdn.com/w80/ru.png" alt="Russia Flag" class="flag">
+                </div>
+                <h3 class="country-name">Russia</h3>
+            </div>
+            <div class="connector-line">
+                <div class="line-inner"></div>
+            </div>
+            <a href="404error.html" class="learn-more-btn">Learn More</a>
+        </div>
                 <!-- China -->
                 <div class="country-item">
                     <div class="country-info">
@@ -7070,60 +7270,13 @@ opacity: 0;
                 </div>
 
                 <!-- Ukraine -->
-                <div class="country-item">
-                    <div class="country-info">
-                        <div class="flag-container">
-                            <img src="https://flagcdn.com/w80/ua.png" alt="Ukraine Flag" class="flag">
-                        </div>
-                        <h3 class="country-name">Ukraine</h3>
-                    </div>
-                    <div class="connector-line">
-                        <div class="line-inner"></div>
-                    </div>
-                    <a href="404error.html" class="learn-more-btn">Learn More</a>
-                </div>
-
-                <!-- Russia -->
-                <div class="country-item">
-                    <div class="country-info">
-                        <div class="flag-container">
-                            <img src="https://flagcdn.com/w80/ru.png" alt="Russia Flag" class="flag">
-                        </div>
-                        <h3 class="country-name">Russia</h3>
-                    </div>
-                    <div class="connector-line">
-                        <div class="line-inner"></div>
-                    </div>
-                    <a href="404error.html" class="learn-more-btn">Learn More</a>
-                </div>
+               
 
                 <!-- Philippines -->
-                <div class="country-item">
-                    <div class="country-info">
-                        <div class="flag-container">
-                            <img src="https://flagcdn.com/w80/ph.png" alt="Philippines Flag" class="flag">
-                        </div>
-                        <h3 class="country-name">Philippines</h3>
-                    </div>
-                    <div class="connector-line">
-                        <div class="line-inner"></div>
-                    </div>
-                    <a href="404error.html" class="learn-more-btn">Learn More</a>
-                </div>
+               
 
                 <!-- Kyrgyzstan -->
-                <div class="country-item">
-                    <div class="country-info">
-                        <div class="flag-container">
-                            <img src="https://flagcdn.com/w80/kg.png" alt="Kyrgyzstan Flag" class="flag">
-                        </div>
-                        <h3 class="country-name">Kyrgyzstan</h3>
-                    </div>
-                    <div class="connector-line">
-                        <div class="line-inner"></div>
-                    </div>
-                    <a href="404error.html" class="learn-more-btn">Learn More</a>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -7267,6 +7420,23 @@ opacity: 0;
 
       <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
       <script>
+function showUniqueSpinner(spinnerId, href) {
+      const overlay = document.getElementById('unique-spinner-overlay');
+      overlay.style.display = 'flex';
+      setTimeout(() => {
+        overlay.style.display = 'none';
+        window.location.href = href;
+      }, 1000);
+    }
+document.querySelector('.whatsapp-float').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent immediate navigation
+            const spinner = document.getElementById('whatsappSpinner');
+            spinner.style.display = 'flex'; // Show spinner
+            setTimeout(() => {
+                spinner.style.display = 'none'; // Hide spinner
+                window.open('https://wa.me/+917488919466', '_blank'); // Open WhatsApp link
+            }, 1000); // Show spinner for 1 second
+        });
           // Particles JS Configuration
           particlesJS("premium-edu-particles", {
               "particles": {
@@ -7727,217 +7897,170 @@ document.querySelector('.back_to_top').addEventListener('click', function() {
 //  js for stikcy button
 
 document.addEventListener('DOMContentLoaded', function() {
-    const admissionButton = document.getElementById('admissionButton');
-    const applicationForm = document.getElementById('applicationForm');
-    const formCloseButton = document.getElementById('formCloseButton');
-    
-    // Toggle form on button click
-    admissionButton.addEventListener('click', function() {
-        applicationForm.classList.toggle('active');
-        
-        // Add animation to form groups when form is active
-        if (applicationForm.classList.contains('active')) {
-            const formGroups = document.querySelectorAll('.form-group');
-            formGroups.forEach((group, index) => {
-                group.style.animationDelay = `${0.1 * (index + 1)}s`;
-            });
-        }
+  const admissionButton = document.getElementById('admissionButton');
+  const applicationForm = document.getElementById('applicationForm');
+  const formCloseButton = document.getElementById('formCloseButton');
+  const applicationFormElement = document.querySelector('.application-form');
+
+  // Toggle form on button click
+  admissionButton.addEventListener('click', function() {
+    applicationForm.classList.toggle('active');
+    if (applicationForm.classList.contains('active')) {
+      const formGroups = document.querySelectorAll('.form-group');
+      formGroups.forEach((group, index) => {
+        group.style.animationDelay = `${0.1 * (index + 1)}s`;
+      });
+    }
+  });
+
+  // Show form on button hover
+  admissionButton.addEventListener('mouseenter', function() {
+    applicationForm.classList.add('active');
+    const formGroups = document.querySelectorAll('.form-group');
+    formGroups.forEach((group, index) => {
+      group.style.animationDelay = `${0.1 * index}s`;
     });
-    
-    // Close form when close button is clicked
-    formCloseButton.addEventListener('click', function(e) {
-        e.stopPropagation(); // Prevent event bubbling
-        applicationForm.classList.remove('active');
+  });
+
+  // Keep form open when hovering over it
+  applicationForm.addEventListener('mouseenter', function() {
+    applicationForm.classList.add('active');
+  });
+
+  // Close form when clicking the close button
+  formCloseButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    applicationForm.classList.remove('active');
+  });
+
+  // Prevent form from closing when clicking inside it
+  applicationForm.addEventListener('click', function(e) {
+    e.stopPropagation();
+  });
+
+  // Close form when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!applicationForm.contains(e.target) && e.target !== admissionButton) {
+      applicationForm.classList.remove('active');
+    }
+  });
+
+  // Close form when mouse leaves container
+  const container = document.querySelector('.sticky-application-container');
+  container.addEventListener('mouseleave', function() {
+    setTimeout(() => {
+      applicationForm.classList.remove('active');
+    }, 300);
+  });
+
+  // Form validation and submission
+  applicationFormElement.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Validate all required fields
+    const inputs = this.querySelectorAll('input, select, textarea');
+    const submitButton = this.querySelector('.submit-button');
+    let isValid = true;
+
+    inputs.forEach(input => {
+      if (input.hasAttribute('required') && !input.value.trim()) {
+        input.classList.add('error');
+        input.classList.remove('success');
+        isValid = false;
+      } else if (input.type !== 'email' && input.type !== 'tel') {
+        input.classList.add('success');
+        input.classList.remove('error');
+      }
     });
-    
-    // Prevent form from closing when clicking inside it
-    applicationForm.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-    
-    // Form validation and submission
-    const applicationFormElement = document.querySelector('.application-form');
-    applicationFormElement.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Add success animation
-        const submitButton = document.querySelector('.submit-button');
-        submitButton.innerHTML = '<span>SUBMITTED</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+
+    if (!isValid) {
+      submitButton.innerHTML = '<span>PLEASE FILL ALL REQUIRED FIELDS</span>';
+      setTimeout(() => {
+        submitButton.innerHTML = '<span>SUBMIT</span> <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+      }, 2000);
+      return;
+    }
+
+    // Prepare form data
+    const formData = {
+      sheetName: 'Sheet2', // Specify Sheet2 for this form
+      name: document.getElementById('name').value || '',
+      mobile: document.getElementById('mobile').value || '',
+      email: document.getElementById('email').value || '',
+      qualification: document.getElementById('qualification').value || '',
+      state: document.getElementById('state').value || '',
+      course: document.getElementById('course').value || '',
+      message: document.getElementById('message').value || ''
+    };
+
+    // Change button state
+    submitButton.innerHTML = '<span>PROCESSING...</span>';
+    submitButton.disabled = true;
+
+    // Send to Google Sheets
+    // https://script.google.com/macros/s/AKfycbzIGIRXsrWn9i2TFWzyka7__-1Fx1KMKBTEwyZ7BwTlg-ZFFf9G7z5hr4rSesBQCoCx/exec
+    fetch('https://script.google.com/macros/s/AKfycbx9Xj7fdxUl_ddSGuDR3-0qDS9NIPuCFzu8V6yexCfWGI-MBmjYAetGPMknRz-tfmXn/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain'
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(() => {
+        submitButton.innerHTML = '<span>SUBMITTED SUCCESSFULLY!</span>';
         submitButton.style.backgroundColor = '#28a745';
-        
+
         // Reset form after delay
         setTimeout(() => {
-            applicationFormElement.reset();
-            submitButton.innerHTML = '<span>SUBMIT</span> <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
-            submitButton.style.backgroundColor = '#0e86e7';
-            
-            // Optional: close form after submission
-            // applicationForm.classList.remove('active');
+          applicationFormElement.reset();
+          submitButton.innerHTML = '<span>SUBMIT</span> <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+          submitButton.style.backgroundColor = '#0e86e7';
+          submitButton.disabled = false;
+
+          inputs.forEach(input => {
+            input.classList.remove('success', 'error');
+          });
+
+          applicationForm.classList.remove('active');
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        submitButton.innerHTML = '<span>ERROR - TRY AGAIN</span>';
+        submitButton.style.backgroundColor = '#e74c3c';
+        setTimeout(() => {
+          submitButton.innerHTML = '<span>SUBMIT</span> <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
+          submitButton.style.backgroundColor = '#0e86e7';
+          submitButton.disabled = false;
         }, 2000);
-    });
+      });
+  });
 });
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    const admissionButton = document.getElementById('admissionButton');
-    const applicationForm = document.getElementById('applicationForm');
-    const formCloseButton = document.getElementById('formCloseButton');
+document.getElementById('admissionButton').addEventListener('click', function() {
+    // Show spinner
+    document.getElementById('spinnerOverlay').style.display = 'flex';
     
-    // Show form when hovering over the button
-    admissionButton.addEventListener('mouseenter', function() {
-        applicationForm.classList.add('active');
-        
-        // Add animation to form groups when form is active
-        const formGroups = document.querySelectorAll('.form-group');
-        formGroups.forEach((group, index) => {
-            group.style.animationDelay = `${0.1 * (index + 1)}s`;
+    // Redirect after 2 seconds
+    setTimeout(function() {
+        window.location.href = 'apply.html';
+    }, 2000);
+});
+
+
+
+document.querySelector('.whatsapp-float').addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent immediate navigation
+            const spinner = document.getElementById('whatsappSpinner');
+            spinner.style.display = 'flex'; // Show spinner
+            setTimeout(() => {
+                spinner.style.display = 'none'; // Hide spinner
+                window.open('https://wa.me/+917488919466', '_blank'); // Open WhatsApp link
+            }, 1000); // Show spinner for 1 second
         });
-    });
-    
-    // Alternative: Toggle form on button click (in addition to hover)
-    admissionButton.addEventListener('click', function() {
-        applicationForm.classList.toggle('active');
-    });
-    
-    // Close form when close button is clicked
-    formCloseButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation(); // Prevent event bubbling
-        applicationForm.classList.remove('active');
-    });
-    
-    // Prevent form from closing when clicking inside it
-    applicationForm.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-    
-    // Close the form when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!applicationForm.contains(e.target) && e.target !== admissionButton) {
-            applicationForm.classList.remove('active');
-        }
-    });
-    
-    // Form validation and submission
-    const applicationFormElement = document.querySelector('.application-form');
-    applicationFormElement.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Add success animation
-        const submitButton = document.querySelector('.submit-button');
-        submitButton.innerHTML = '<span>SUBMITTED</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-        submitButton.style.backgroundColor = '#28a745';
-        
-        // Reset form after delay
-        setTimeout(() => {
-            applicationFormElement.reset();
-            submitButton.innerHTML = '<span>SUBMIT</span> <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
-            submitButton.style.backgroundColor = '#0e86e7';
-            
-            // Close form after submission
-            applicationForm.classList.remove('active');
-        }, 2000);
-    });
-    
-    // Keep form open when mouse is over form
-    applicationForm.addEventListener('mouseenter', function() {
-        applicationForm.classList.add('active');
-    });
-    
-    // Optional: Close form when mouse leaves both button and form
-    // Uncomment this if you want the form to close when mouse leaves
-    /*
-    const container = document.querySelector('.sticky-application-container');
-    container.addEventListener('mouseleave', function() {
-        setTimeout(() => {
-            applicationForm.classList.remove('active');
-        }, 500); // Small delay to make interaction smoother
-    });
-    */
-});
-
-
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    const admissionButton = document.getElementById('admissionButton');
-    const applicationForm = document.getElementById('applicationForm');
-    const formCloseButton = document.getElementById('formCloseButton');
-    
-    // Toggle form on button click
-    admissionButton.addEventListener('click', function() {
-        applicationForm.classList.toggle('active');
-        
-        // Add animation to form groups when form is active
-        if (applicationForm.classList.contains('active')) {
-            const formGroups = document.querySelectorAll('.form-group');
-            formGroups.forEach((group, index) => {
-                group.style.animationDelay = `${0.1 * (index + 1)}s`;
-            });
-        }
-    });
-    
-    // Close form when close button is clicked
-    formCloseButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation(); // Prevent event bubbling
-        applicationForm.classList.remove('active');
-    });
-    
-    // Prevent form from closing when clicking inside it
-    applicationForm.addEventListener('click', function(e) {
-        e.stopPropagation();
-    });
-    
-    // Keep form visible when hovering over it
-    applicationForm.addEventListener('mouseenter', function() {
-        applicationForm.classList.add('active');
-    });
-    
-    // Show form when hovering over button
-    admissionButton.addEventListener('mouseenter', function() {
-        applicationForm.classList.add('active');
-    });
-    
-    // Form validation and submission
-    const applicationFormElement = document.querySelector('.application-form');
-    applicationFormElement.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Add success animation
-        const submitButton = document.querySelector('.submit-button');
-        submitButton.innerHTML = '<span>SUBMITTED</span> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>';
-        submitButton.style.backgroundColor = '#28a745';
-        
-        // Reset form after delay
-        setTimeout(() => {
-            applicationFormElement.reset();
-            submitButton.innerHTML = '<span>SUBMIT</span> <svg class="button-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>';
-            submitButton.style.backgroundColor = '#0e86e7';
-            
-            // Close form after submission
-            applicationForm.classList.remove('active');
-        }, 2000);
-    });
-    
-    // Optional: Close form when mouse leaves both form and button
-    const container = document.querySelector('.sticky-application-container');
-    container.addEventListener('mouseleave', function() {
-        setTimeout(() => {
-            applicationForm.classList.remove('active');
-        }, 300); // Small delay to make interaction smoother
-    });
-    
-    // Close the form when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!applicationForm.contains(e.target) && e.target !== admissionButton) {
-            applicationForm.classList.remove('active');
-        }
-    });
-});
       </script>
    </body>
 </html>
