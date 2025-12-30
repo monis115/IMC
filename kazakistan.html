@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universities of Kazakhstan</title>
+    <link rel="stylesheet" href="kazakistan.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <p>Loading<span class="loading-dots"><span></span><span></span><span></span></span></p>
+        </div>
+    </div>
+
+    <header class="edu-header">
+        <div class="edu-container">
+            <nav class="edu-navbar">
+                <div class="edu-logo">
+                    <a href="index.html">
+                        <img src="/images/logo.png" alt="Educational Institution Logo" class="edu-logo__img">
+                    </a>
+                </div>
+                <button class="edu-navbar__toggler" type="button" aria-label="Toggle navigation">
+                    <span class="edu-navbar__toggler-icon"></span>
+                </button>
+                <button class="edu-nav-close" aria-label="Close navigation">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="edu-nav-container" id="eduNavbarContent">
+                    <ul class="edu-nav">
+                        <li class="edu-nav__item edu-nav__item--active">
+                            <a class="edu-nav__link" href="index.html">Home</a>
+                        </li>
+                        <li class="edu-nav__item">
+                            <a class="edu-nav__link" href="#">Medical</a>
+                            <ul class="edu-dropdown">
+                                <li class="edu-subdropdown">
+                                    <a class="edu-dropdown__item" href="404error.html">NEET UG <span class="edu-dropdown__arrow">▶</span></a>
+                                    <ul class="edu-subdropdown__menu">
+                                        <li><a class="edu-dropdown__item" href="404error.html">MBBS/BDS</a></li>
+                                        <li><a class="edu-dropdown__item" href="404error.html">BAMS</a></li>
+                                        <li><a class="edu-dropdown__item" href="404error.html">BUMS</a></li>
+                                        <li><a class="edu-dropdown__item" href="404error.html">BHMS</a></li>
+                                    </ul>
+                                </li>
+                                <li class="edu-subdropdown">
+                                    <a class="edu-dropdown__item" href="404error.html">NEET PG <span class="edu-dropdown__arrow">▶</span></a>
+                                    <ul class="edu-subdropdown__menu">
+                                        <li><a class="edu-dropdown__item" href="404error.html">MD/MS</a></li>
+                                        <li><a class="edu-dropdown__item" href="404error.html">Ayush PS</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="edu-nav__item">
+                            <a class="edu-nav__link" href="404error.html">PARA Medical</a>
+                            <ul class="edu-dropdown">
+                                <li><a class="edu-dropdown__item" href="404error.html">B.Sc Nursing</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">B.Sc Radiology</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">ANM/GNM</a></li>
+                            </ul>
+                        </li>
+                        <li class="edu-nav__item">
+                            <a class="edu-nav__link" href="404error.html">Management</a>
+                            <ul class="edu-dropdown">
+                                <li><a class="edu-dropdown__item" href="404error.html">MBA</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">BBA</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">PGDM</a></li>
+                            </ul>
+                        </li>
+                        <li class="edu-nav__item">
+                            <a class="edu-nav__link" href="404error.html">Engineering</a>
+                            <ul class="edu-dropdown">
+                                <li><a class="edu-dropdown__item" href="404error.html">B.Tech</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">B.Arch</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">M.Tech</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+               
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search universities...">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <div class="universities-grid">
+            <div class="university-card" data-city="almaty">
+                <div class="image-container">
+                    <img src="/images/AlFarabiKazakhNationalUniversity.webp" alt="Al Farabi Kazakh National University">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Almaty</div>
+                </div>
+                <div class="content">
+                    <h2>Al Farabi Kazakh National University</h2>
+                    <p class="description">Leading university in Kazakhstan, established in 1934, renowned for its comprehensive medical and research programs.</p>
+                    <div class="details">
+                        <span><i class="fas fa-graduation-cap"></i> 30,000+ Students</span>
+                        <span><i class="fas fa-book"></i> 200+ Programs</span>
+                    </div>
+                    <a href="AlFarabiKazakhNationalUniversity.html" class="learn-more" onclick="showSpinner(this, event)">Learn More</a>
+                </div>
+            </div>
+
+            <div class="university-card" data-city="astana">
+                <div class="image-container">
+                    <img src="/images/AstanaMedicalUniversity.webp" alt="Astana Medical University">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Astana</div>
+                </div>
+                <div class="content">
+                    <h2>Astana Medical University</h2>
+                    <p class="description">Premier medical institution in the capital, known for advanced medical training and modern facilities.</p>
+                    <div class="details">
+                        <span><i class="fas fa-graduation-cap"></i> 10,000+ Students</span>
+                        <span><i class="fas fa-book"></i> 30+ Programs</span>
+                    </div>
+                    <a href="astana.html" class="learn-more" onclick="showSpinner(this, event)">Learn More</a>
+                </div>
+            </div>
+
+            <div class="university-card" data-city="karaganda">
+                <div class="image-container">
+                    <img src="/images/KaragandaStateMedicalUniversity.webp" alt="Karaganda State Medical University">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Karaganda</div>
+                </div>
+                <div class="content">
+                    <h2>Karaganda State Medical University</h2>
+                    <p class="description">Established medical university offering robust MBBS programs with a focus on practical training.</p>
+                    <div class="details">
+                        <span><i class="fas fa-graduation-cap"></i> 8,000+ Students</span>
+                        <span><i class="fas fa-book"></i> 25+ Programs</span>
+                    </div>
+                    <a href="karaganda.html" class="learn-more" onclick="showSpinner(this, event)">Learn More</a>
+                </div>
+            </div>
+
+            <div class="university-card" data-city="almaty">
+                <div class="image-container">
+                    <img src="/images/KazakhNationalMedicalUniversity.webp" alt="Kazakh National Medical University">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Almaty</div>
+                </div>
+                <div class="content">
+                    <h2>Kazakh National Medical University</h2>
+                    <p class="description">Top-tier medical university in Almaty, known for its research and international medical programs.</p>
+                    <div class="details">
+                        <span><i class="fas fa-graduation-cap"></i> 11,000+ Students</span>
+                        <span><i class="fas fa-book"></i> 35+ Programs</span>
+                    </div>
+                    <a href="kazakh_nation.html" class="learn-more" onclick="showSpinner(this, event)">Learn More</a>
+                </div>
+            </div>
+
+            <div class="university-card" data-city="almaty">
+                <div class="image-container">
+                    <img src="/images/KazakhRussianMedicalUniversity.webp" alt="Kazakh Russian Medical University">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Almaty</div>
+                </div>
+                <div class="content">
+                    <h2>Kazakh Russian Medical University</h2>
+                    <p class="description">Reputed for its MBBS program, offering bilingual education and modern medical facilities.</p>
+                    <div class="details">
+                        <span><i class="fas fa-graduation-cap"></i> 7,000+ Students</span>
+                        <span><i class="fas fa-book"></i> 20+ Programs</span>
+                    </div>
+                    <a href="kazakh_russian.html" class="learn-more" onclick="showSpinner(this, event)">Learn More</a>
+                </div>
+            </div>
+
+            <div class="university-card" data-city="almaty">
+                <div class="image-container">
+                    <img src="/images/KazakhMedicalUniversity.webp" alt="Kazakh Medical University of Continuing Education">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Almaty</div>
+                </div>
+                <div class="content">
+                    <h2>Kazakh Medical University of Continuing Education</h2>
+                    <p class="description">Specializes in medical education and continuous professional development for healthcare professionals.</p>
+                    <div class="details">
+                        <span><i class="fas fa-graduation-cap"></i> 5,000+ Students</span>
+                        <span><i class="fas fa-book"></i> 15+ Programs</span>
+                    </div>
+                    <a href="kazakh_continuing.html" class="learn-more" onclick="showSpinner(this, event)">Learn More</a>
+                </div>
+            </div>
+
+            <div class="university-card" data-city="kokshetau">
+                <div class="image-container">
+                    <img src="/images/KokshetauStateUniversity.webp" alt="Kokshetau State University">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Kokshetau</div>
+                </div>
+                <div class="content">
+                    <h2>Kokshetau State University</h2>
+                    <p class="description">Offers diverse programs including medical education, with a focus on regional development.</p>
+                    <div class="details">
+                        <span><i class="fas fa-graduation-cap"></i> 9,000+ Students</span>
+                        <span><i class="fas fa-book"></i> 40+ Programs</span>
+                    </div>
+                    <a href="kokshetau_state.html" class="learn-more" onclick="showSpinner(this, event)">Learn More</a>
+                </div>
+            </div>
+
+            <div class="university-card" data-city="petropavl">
+                <div class="image-container">
+                    <img src="/images/NorthKazakhstanStateUniversity.webp" alt="North Kazakhstan State University">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Petropavl</div>
+                </div>
+                <div class="content">
+                    <h2>North Kazakhstan State University</h2>
+                    <p class="description">Known for its medical and technical programs, serving northern Kazakhstan's educational needs.</p>
+                    <div class="details">
+                        <span><i class="fas fa-graduation-cap"></i> 7,500+ Students</span>
+                        <span><i class="fas fa-book"></i> 30+ Programs</span>
+                    </div>
+                    <a href="north_kazakhstan_state.html" class="learn-more" onclick="showSpinner(this, event)">Learn More</a>
+                </div>
+            </div>
+
+            <div class="university-card" data-city="semey">
+                <div class="image-container">
+                    <img src="/images/SemeyStateMedicalUniversity.webp" alt="Semey State Medical University">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Semey</div>
+                </div>
+                <div class="content">
+                    <h2>Semey State Medical University</h2>
+                    <p class="description">Renowned for its MBBS program and contributions to medical research in eastern Kazakhstan.</p>
+                    <div class="details">
+                        <span><i class="fas fa-graduation-cap"></i> 6,000+ Students</span>
+                        <span><i class="fas fa-book"></i> 20+ Programs</span>
+                    </div>
+                    <a href="semey_state_medical.html" class="learn-more" onclick="showSpinner(this, event)">Learn More</a>
+                </div>
+            </div>
+
+            <div class="university-card" data-city="shymkent">
+                <div class="image-container">
+                    <img src="/images/SouthKazakhstanStateMedical.webp" alt="South Kazakhstan State Medical Academy">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Shymkent</div>
+                </div>
+                <div class="content">
+                    <h2>South Kazakhstan State Medical Academy</h2>
+                    <p class="description">Leading medical academy in southern Kazakhstan, offering quality MBBS and healthcare training.</p>
+                    <div class="details">
+                        <span><i class="fas fa-graduation-cap"></i> 8,500+ Students</span>
+                        <span><i class="fas fa-book"></i> 25+ Programs</span>
+                    </div>
+                    <a href="south_kazakhstan_medical.html" class="learn-more" onclick="showSpinner(this, event)">Learn More</a>
+                </div>
+            </div>
+
+            <div class="university-card" data-city="aktobe">
+                <div class="image-container">
+                    <img src="/images/WestKazakhstanMaratOspanovState.webp" alt="West Kazakhstan Marat Ospanov State Medical University">
+                    <div class="location"><i class="fas fa-map-marker-alt"></i> Aktobe</div>
+                </div>
+                <div class="content">
+                    <h2>West Kazakhstan Marat Ospanov State Medical University</h2>
+                    <p class="description">Prominent medical university in western Kazakhstan, known for its MBBS and clinical training programs.</p>
+                    <div class="details">
+                        <span><i class="fas fa-graduation-cap"></i> 7,000+ Students</span>
+                        <span><i class="fas fa-book"></i> 20+ Programs</span>
+                    </div>
+                    <a href="west_kazakhstan_medical.html" class="learn-more" onclick="showSpinner(this, event)">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 IMC. All rights reserved.</p>
+    </footer>
+
+    <script src="kazakistan.js"></script>
+</body>
+</html>

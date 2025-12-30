@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Colleges in India - Professional Directory</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #f5f5f5; /* Whitesmoke background */
+            min-height: 100vh;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem;
+            padding-top: 100px; /* Added padding-top to account for fixed navbar */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding: 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 0 0 20px 20px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2.5rem; /* Reduced from 3.5rem */
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem; /* Reduced from 1.3rem */
+            font-weight: 300;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            text-align: center;
+            color: white;
+        }
+
+        .stat-number {
+            font-size: 2rem; /* Reduced from 2.5rem */
+            font-weight: 700;
+            display: block;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-label {
+            font-size: 0.9rem; /* Reduced from 1rem */
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .search-filter {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .search-row {
+            display: flex;
+            gap: 0.8rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.8rem 0.8rem 0.8rem 2.5rem;
+            border: none;
+            border-radius: 40px;
+            font-size: 0.95rem; /* Reduced from 1.1rem */
+            background: #f8f9fa;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-input:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            font-size: 1rem; /* Reduced from 1.2rem */
+        }
+
+        .filter-select {
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 40px;
+            font-size: 0.9rem; /* Reduced from 1rem */
+            background: #f8f9fa;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            min-width: 130px;
+        }
+
+        .filter-select:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .state-section {
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .state-header {
+            background: white;
+            border-radius: 15px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .state-header h2 {
+            color: #2d3748;
+            font-size: 1.5rem; /* Reduced from 2rem */
+            font-weight: 600;
+            flex: 1;
+        }
+
+        .college-count {
+            background: #667eea;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.8rem; /* Reduced from 0.9rem */
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .college-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .college-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .college-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .college-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .college-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .college-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem; /* Reduced from 1.5rem */
+            flex-shrink: 0;
+            box-shadow: 0 6px 15px rgba(102, 126, 234, 0.2);
+        }
+
+        .college-info h3 {
+            color: #2d3748;
+            font-size: 1.1rem; /* Reduced from 1.3rem */
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 0.4rem;
+        }
+
+        .college-location {
+            color: #718096;
+            font-size: 0.9rem; /* Reduced from 1rem */
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .college-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-top: 1rem;
+        }
+
+        .detail-tag {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            padding: 0.4rem 0.8rem;
+            border-radius: 40px;
+            font-size: 0.75rem; /* Reduced from 0.85rem */
+            font-weight: 600;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .college-actions {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.6rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem; /* Reduced from 0.9rem */
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: #2d3748;
+        }
+
+        .no-results i {
+            font-size: 3rem; /* Reduced from 4rem */
+            margin-bottom: 0.8rem;
+            opacity: 0.5;
+        }
+
+        .no-results h3 {
+            font-size: 1.2rem; /* Reduced from 1.5rem */
+            margin-bottom: 0.4rem;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1rem; /* Reduced from 1.2rem */
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+                padding-top: 80px; /* Adjusted padding-top for mobile */
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .header p {
+                font-size: 0.9rem;
+            }
+
+            .stats-bar {
+                gap: 1rem;
+            }
+
+            .search-row {
+                flex-direction: column;
+            }
+
+            .search-box {
+                min-width: 100%;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .college-card {
+                padding: 1rem;
+            }
+
+            .state-header {
+                padding: 0.8rem 1rem;
+            }
+
+            .state-header h2 {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0.8rem;
+                padding-top: 70px; /* Further reduced padding-top for smaller phones */
+            }
+
+            .header {
+                padding: 1.5rem 1rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .header h1 {
+                font-size: 1.5rem;
+            }
+
+            .header p {
+                font-size: 0.85rem;
+            }
+
+            .stats-bar {
+                gap: 0.8rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+
+            .stat-label {
+                font-size: 0.8rem;
+            }
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+
+
+        .edu-header {
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+
+main {
+    padding-top: 80px;
+}
+
+.edu-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    height: 60px;
+}
+
+.edu-logo__img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+
+.edu-nav-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edu-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.edu-nav__item {
+    margin: 0 15px;
+    position: relative;
+}
+
+.edu-nav__link {
+    color: #333333;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 5px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.edu-nav__link:hover,
+.edu-nav__item--active .edu-nav__link {
+    color: #007bff;
+}
+
+.edu-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 10px 0;
+    z-index: 100;
+}
+
+.edu-nav__item:hover .edu-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.edu-dropdown__item {
+    display: block;
+    padding: 10px 20px;
+    color: #333333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.edu-dropdown__item:hover {
+    background-color: #f8f9fa;
+    color: #007bff;
+    padding-left: 25px;
+}
+
+.edu-subdropdown {
+    position: relative;
+}
+
+.edu-subdropdown__menu {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 220px;
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(10px);
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    padding: 10px 0;
+}
+
+.edu-subdropdown:hover .edu-subdropdown__menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.edu-apply {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.edu-apply__btn {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.edu-apply__btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.edu-navbar__toggler {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333333;
+    padding: 5px;
+}
+
+.edu-navbar__toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+}
+
+.edu-nav-close {
+    display: none;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1003;
+}
+
+.edu-nav-close:hover {
+    color: #007bff;
+}
+
+/* Mobile Navbar Styles */
+@media (max-width: 576px) {
+    .edu-navbar__toggler {
+        display: block;
+        z-index: 1002;
+    }
+
+    .edu-nav-close {
+        display: none !important;
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        background: none;
+        border: none;
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+        padding: 5px;
+        z-index: 1003;
+        width: 40px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .edu-nav--open .edu-navbar__toggler {
+        display: none;
+    }
+
+    .edu-nav--open .edu-nav-close {
+        display: flex !important;
+    }
+
+    .edu-nav-close:hover {
+        color: #007bff;
+    }
+
+    .edu-nav-container {
+        display: none;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 60px);
+        background-color: #ffffff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        overflow-y: auto;
+        z-index: 1001;
+    }
+
+    .edu-nav--open .edu-nav-container {
+        display: block;
+    }
+
+    .edu-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .edu-nav__item {
+        margin: 0.5rem 0;
+        width: 100%;
+    }
+
+    .edu-nav__link {
+        font-size: 18px;
+        padding: 10px 15px;
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+
+    /* Add dropdown arrow indicator */
+    .edu-nav__item:has(.edu-dropdown) .edu-nav__link::after {
+        content: '▼';
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 12px;
+        transition: transform 0.3s ease;
+    }
+
+    .edu-nav__item--open .edu-nav__link::after {
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .edu-dropdown {
+        position: static;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        background-color: #f8f9fa;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        margin-top: 5px;
+    }
+
+    .edu-nav__item--open .edu-dropdown {
+        display: block;
+    }
+
+    .edu-dropdown__item {
+        padding: 12px 30px;
+        font-size: 16px;
+        position: relative;
+    }
+
+    /* Add subdropdown arrow indicator */
+    .edu-subdropdown .edu-dropdown__item::after {
+        content: '▶';
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 12px;
+        transition: transform 0.3s ease;
+    }
+
+    .edu-subdropdown--open .edu-dropdown__item::after {
+        transform: translateY(-50%) rotate(90deg);
+    }
+
+    .edu-subdropdown__menu {
+        position: static;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: none;
+        background-color: #f0f1f2;
+        box-shadow: none;
+        border-radius: 0;
+        padding: 0;
+        margin-left: 15px;
+    }
+
+    .edu-subdropdown--open .edu-subdropdown__menu {
+        display: block;
+    }
+
+    .edu-subdropdown__menu .edu-dropdown__item {
+        padding-left: 45px;
+    }
+
+    .edu-apply {
+        display: none;
+    }
+
+    .edu-nav--open .edu-apply {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .edu-apply__btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 18px;
+    }
+
+    main {
+        padding-top: 60px;
+    }
+}
+
+@media (max-width: 992px) {
+    main {
+        padding-top: 70px;
+    }
+    
+    .edu-navbar {
+        height: auto;
+        min-height: 60px;
+    }
+}
+    </style>
+</head>
+<body>
+
+
+    <header class="edu-header">
+        <div class="edu-container">
+            <nav class="edu-navbar">
+                <div class="edu-logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="Educational Institution Logo" class="edu-logo__img">
+                    </a>
+                </div>
+                
+                <button class="edu-navbar__toggler" type="button" aria-label="Toggle navigation">
+                    <span class="edu-navbar__toggler-icon"></span>
+                </button>
+
+                <button class="edu-nav-close" aria-label="Close navigation">
+                    <i class="fas fa-times"></i>
+                </button>
+                
+                <div class="edu-nav-container" id="eduNavbarContent">
+                    <ul class="edu-nav">
+                        <li class="edu-nav__item edu-nav__item--active">
+                            <a class="edu-nav__link" href="index.html">Home</a>
+                        </li>
+                        <li class="edu-nav__item">
+                            <a class="edu-nav__link" href="">Medical</a>
+                            <ul class="edu-dropdown">
+                                <li class="edu-subdropdown">
+                                    <a class="edu-dropdown__item" href="404error.html">NEET UG <span class="edu-dropdown__arrow">▶</span></a>
+                                    <ul class="edu-subdropdown__menu">
+                                        <li><a class="edu-dropdown__item" href="404error.html"> MBBS/BDS</a></li>
+                                        <li><a class="edu-dropdown__item" href="404error.html">BAMS</a></li>
+                                        <li><a class="edu-dropdown__item" href="404error.html">BUMS</a></li>
+                                        <li><a class="edu-dropdown__item" href="404error.html">BHMS</a></li>
+                                    </ul>
+                                </li>
+                                <li class="edu-subdropdown">
+                                    <a class="edu-dropdown__item" href="404error.html">NEET PG <span class="edu-dropdown__arrow">▶</span></a>
+                                    <ul class="edu-subdropdown__menu">
+                                        <li><a class="edu-dropdown__item" href="404error.html">MD/MS</a></li>
+                                        <li><a class="edu-dropdown__item" href="404error.html">Ayush PS</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="edu-nav__item">
+                            <a class="edu-nav__link" href="404error.html">PARA Medical</a>
+                            <ul class="edu-dropdown">
+                                <li><a class="edu-dropdown__item" href="404error.html"> B.Sc Nursing</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">B.Sc Radiology</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">ANM/GNM</a></li>
+                            </ul>
+                        </li>
+                        <li class="edu-nav__item">
+                            <a class="edu-nav__link" href="404error.html">Management</a>
+                            <ul class="edu-dropdown">
+                                <li><a class="edu-dropdown__item" href="404error.html">MBA</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">BBA</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">PGDM</a></li>
+                            </ul>
+                        </li>
+                        <li class="edu-nav__item">
+                            <a class="edu-nav__link" href="404error.html">Engineering</a>
+                            <ul class="edu-dropdown">
+                                <li><a class="edu-dropdown__item" href="404error.html">B.Tech</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">B.Arch</a></li>
+                                <li><a class="edu-dropdown__item" href="404error.html">M.Tech</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="edu-apply">
+                    <!-- <a href="apply.html" class="edu-apply__btn">Apply Now</a> -->
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-graduation-cap"></i> Medical Colleges Directory</h1>
+            <p>Comprehensive guide to premier medical institutions across India</p>
+            
+            <div class="stats-bar">
+                <div class="stat">
+                    <span class="stat-number" id="totalColleges">78</span>
+                    <span class="stat-label">Total Colleges</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">7</span>
+                    <span class="stat-label">States Covered</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">NEET Accepted</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="search-filter">
+            <div class="search-row">
+                <div class="search-box">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search colleges by name or location...">
+                </div>
+                <select class="filter-select" id="stateFilter">
+                    <option value="all">All States</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Kerala">Kerala</option>
+                    <option value="Rajasthan">Rajasthan</option>
+                    <option value="Uttar Pradesh">Uttar Pradesh</option>
+                    <option value="West Bengal">West Bengal</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="collegesContainer">
+            <!-- Colleges will be dynamically inserted here -->
+        </div>
+
+        <div class="no-results hidden" id="noResults">
+            <i class="fas fa-search"></i>
+            <h3>No colleges found</h3>
+            <p>Try adjusting your search criteria or filters</p>
+        </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" style="
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 2000;
+        justify-content: center;
+        align-items: center;
+    ">
+        <div style="
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        ">
+            <div class="spinner" style="
+                width: 50px;
+                height: 50px;
+                border: 4px solid #f3f3f3;
+                border-top: 4px solid #667eea;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                margin: 0 auto 15px;
+            "></div>
+            <p style="
+                color: #1e293b;
+                font-weight: 500;
+                margin: 0;
+            ">Loading college details...</p>
+        </div>
+    </div>
+
+    <script>
+        // Medical colleges data
+        const collegesData = {
+            "Bihar": [
+                "Lord Buddha Koshi Medical College & Hospital, Saharsa",
+                "Al-Karim University, Katihar",
+                "Kathar Medical College, Kathar",
+                "Mata Guri Memorial Medical College & Lions Seva Kendr A Hospital, Kishanganj",
+                "Narayan Medical College & Hospital, Sasaram",
+                "Netaji Subhas Medical College & Hospital, Patna",
+                "Radha Devi Jageshwari Memorial Medical College, Muzaffarpur",
+                "Shree Narayan Medical Institute & Hospital, Saharsa"
+            ],
+            "Chhattisgarh": [
+                "Laxmi Chandravansi Medical College & Hospital, Bishrampur",
+                "Raipur Institute of Medical Sciences, Raipur",
+                "Shri Shankaracharya Institute of Medical Sciences, Bhilai"
+            ],
+            "Haryana": [
+                "Adesh Medical College & Hospital, Kurukshetra",
+                "Al Falah Medical College, Faridabad",
+                "Amrita School of Medicine, Faridabad",
+                "Maharishi Markandeshwar Institute of Medical Sciences & Research, Ambala",
+                "N C Medical College & Hospital, Panipat",
+                "Faculty of Medicine, SGT University, Gurugram",
+                "World College of Medical Sciences & Hospital, Jhajjar"
+            ],
+            "Kerala": [
+                "Al Azhar Medical College & Super Speciality Hospital, Kumaramangalam",
+                "Amala Institute of Medical Sciences, Thrissur",
+                "Azeezia Institute of Medical Sciences, Meeyannoor",
+                "Believers Church Medical College & Hospital, Thiruvalla",
+                "Jubilee Mission Medical College, Thrissur",
+                "Karuna Medical College, Palakkad",
+                "Malabar Medical College Hospital & Research Centre, Modakkallur",
+                "Malankara Orthodox Syrian Church Medical College, Kolenchery",
+                "MES Academy of Medical Sciences, Malaparamba",
+                "Mount Zion Medical College, Ezhankulam",
+                "P K Das Institute of Medical Sciences, Ottapalam",
+                "Pushpagiri Institute of Medical Sciences & Research, Thiruvalla",
+                "Sree Gokulam Medical College & Research, Thiruvananthapuram",
+                "Sree Narayana Institute of Medical Sciences, Kunnukara",
+                "Sree Uthradom Thirunal Academy of Medical Sciences, Thiruvananthapuram",
+                "Travancore Medical College, Kollam"
+            ],
+            "Rajasthan": [
+                "American Institute of Medical Sciences, Udaipur",
+                "Ananta Institute of Medical Sciences & Research Centre, Rajsamand",
+                "Geetanjali Medical College & Hospital, Jodhpur",
+                "Jaipur National University Institute of Medical Sciences and Research Centre, Jaipur",
+                "Mahatma Gandhi Medical College & Hospital, Jaipur",
+                "National Institute of Medical Science & Research, Jaipur",
+                "Pacific Medical College & Hospital, Udaipur",
+                "Pacific Institute of Medical Sciences, Udaipur",
+                "Dr. S S Tantia Medical College, Sri Ganganagar"
+            ],
+            "Uttar Pradesh": [
+                "Career Institute of Medical Science & Hospital, Lucknow",
+                "Era's Lucknow Medical College & Hospital, Lucknow",
+                "F H Medical College & Hospital, Agra",
+                "G S Medical College & Hospital, Hapur",
+                "Heritage Institute of Medical Science, Varanasi",
+                "Hind Institute of Medical Science, Sitapur",
+                "Integral University, Lucknow",
+                "K D Medical College, Hospital & Research Centre, Mathura",
+                "Muzaffarnagar Medical College, Muzaffarnagar",
+                "Naraina Medical College & Research Centre, Kanpur",
+                "National Capital Region Institute of Medical Sciences, Meerut",
+                "Noida International Institute of Medical Science",
+                "Rajshree Medical Research Institute, Bareilly",
+                "Rama Medical College Hospital & Research Centre, Kanpur",
+                "Rama Medical College Hospital & Research Centre, Hapur",
+                "Rohilkhand Medical College & Hospital, Bareilly",
+                "Prasad Institute of Medical Sciences, Lucknow",
+                "Santosh Medical College, Ghaziabad",
+                "Saraswati Institute of Medical Science, Hapur",
+                "School of Medical Sciences & Research, Greater Noida",
+                "SKS Hospital Medical College & Research Centre, Mathura",
+                "Shri Ram Murti Smarak Institute of Medical Sciences, Bareilly",
+                "Subharti Medical College, Meerut",
+                "T S Misra Medical College & Hospital, Lucknow",
+                "Teerthanker Mahaveer University, Moradabad",
+                "United Institute of Medical Sciences, Prayagraj",
+                "Venkateshwara Institute of Medical Sciences, Gajraula"
+            ],
+            "West Bengal": [
+                "Gouri Devi Institute of Medical Sciences, Rajbandh",
+                "ICARE Institute of Medical Sciences Research and Hospital, Haldia",
+                "IQ City Medical College Hospital, Durgapur",
+                "JIS School of Medical Sciences & Research, Howrah",
+                "JMN Medical College, Nadia",
+                "KPC Medical College & Hospital, Jadavpur",
+                "Shri Ramkrishna Institute of Medical Sciences, Durgapur"
+            ]
+        };
+
+        // Additional college information
+        const collegeDetails = {
+            "private": ["Private", "NEET Accepted", "Modern Facilities"],
+            "established": ["Est. 1990s-2000s", "Affiliated", "Research Focused"],
+            "features": ["Clinical Training", "Well Equipped", "Experienced Faculty"]
+        };
+
+        let allColleges = [];
+        let filteredColleges = [];
+
+        // Initialize the page
+        function init() {
+            generateCollegesList();
+            renderColleges();
+            setupEventListeners();
+            animateOnScroll();
+        }
+
+        // Generate colleges list with additional details
+        function generateCollegesList() {
+            allColleges = [];
+            Object.keys(collegesData).forEach(state => {
+                collegesData[state].forEach((college, index) => {
+                    const collegeName = college.split(',')[0].trim();
+                    const location = college.split(',').slice(1).join(',').trim();
+                    
+                    allColleges.push({
+                        name: collegeName,
+                        location: location,
+                        state: state,
+                        fullName: college,
+                        type: "Private Medical College",
+                        established: Math.floor(Math.random() * 30) + 1990,
+                        facilities: getRandomFacilities(),
+                        rating: (Math.random() * 2 + 3).toFixed(1)
+                    });
+                });
+            });
+            filteredColleges = [...allColleges];
+        }
+
+        // Get random facilities for colleges
+        function getRandomFacilities() {
+            const allFacilities = [
+                "NEET Accepted", "Modern Labs", "Digital Library", "Research Center",
+                "Clinical Training", "Experienced Faculty", "Well Equipped", "Hospital Attached",
+                "Simulation Lab", "Innovation Hub", "Student Housing", "Sports Complex"
+            ];
+            const numFacilities = Math.floor(Math.random() * 4) + 3;
+            return allFacilities.sort(() => 0.5 - Math.random()).slice(0, numFacilities);
+        }
+
+        // Render colleges on the page
+        function renderColleges() {
+            const container = document.getElementById('collegesContainer');
+            const noResults = document.getElementById('noResults');
+            
+            if (filteredColleges.length === 0) {
+                container.innerHTML = '';
+                noResults.classList.remove('hidden');
+                return;
+            }
+            
+            noResults.classList.add('hidden');
+            
+            // Group colleges by state
+            const collegesByState = {};
+            filteredColleges.forEach(college => {
+                if (!collegesByState[college.state]) {
+                    collegesByState[college.state] = [];
+                }
+                collegesByState[college.state].push(college);
+            });
+
+            let html = '';
+            Object.keys(collegesByState).sort().forEach(state => {
+                html += `
+                    <div class="state-section">
+                        <div class="state-header">
+                            <h2><i class="fas fa-map-marker-alt"></i> ${state}</h2>
+                            <div class="college-count">${collegesByState[state].length} Colleges</div>
+                        </div>
+                        <div class="cards-grid">
+                `;
+                
+                collegesByState[state].forEach(college => {
+                    html += createCollegeCard(college);
+                });
+                
+                html += `
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = html;
+            
+            // Update total count
+            document.getElementById('totalColleges').textContent = filteredColleges.length;
+            
+            // Animate cards
+            setTimeout(() => {
+                const cards = document.querySelectorAll('.college-card');
+                cards.forEach((card, index) => {
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, index * 50);
+                });
+            }, 100);
+        }
+
+        // Create individual college card
+        function createCollegeCard(college) {
+            return `
+                <div class="college-card" style="opacity: 0; transform: translateY(20px); transition: all 0.6s ease;">
+                    <div class="college-header">
+                        <div class="college-icon">
+                            <i class="fas fa-user-md"></i>
+                        </div>
+                        <div class="college-info">
+                            <h3>${college.name}</h3>
+                            <div class="college-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                ${college.location || college.state}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="college-details">
+                        ${college.facilities.slice(0, 3).map(facility => 
+                            `<span class="detail-tag">${facility}</span>`
+                        ).join('')}
+                        <span class="detail-tag">★ ${college.rating}</span>
+                    </div>
+                    
+                    <div class="college-actions">
+                        <a href="collegeError.html" class="btn btn-primary" onclick="showSpinner(this, event)">
+                            <i class="fas fa-info-circle"></i>
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Function to show spinner and handle navigation
+        function showSpinner(link, event) {
+            event.preventDefault();
+            
+            // Show the loading overlay
+            const overlay = document.getElementById('loadingOverlay');
+            overlay.style.display = 'flex';
+            
+            // Simulate loading for 2 seconds
+            setTimeout(() => {
+                // Hide the loading overlay
+                overlay.style.display = 'none';
+                
+                // Navigate to the error page
+                window.location.href = link.href;
+            }, 2000);
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            const searchInput = document.getElementById('searchInput');
+            const stateFilter = document.getElementById('stateFilter');
+            const backToTop = document.getElementById('backToTop');
+
+            searchInput.addEventListener('input', handleSearch);
+            stateFilter.addEventListener('change', handleFilter);
+            
+            // Back to top functionality
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 300) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // Handle search functionality
+        function handleSearch() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const selectedState = document.getElementById('stateFilter').value;
+            
+            filteredColleges = allColleges.filter(college => {
+                const matchesSearch = college.name.toLowerCase().includes(searchTerm) ||
+                                    college.location.toLowerCase().includes(searchTerm) ||
+                                    college.state.toLowerCase().includes(searchTerm);
+                const matchesState = selectedState === 'all' || college.state === selectedState;
+                
+                return matchesSearch && matchesState;
+            });
+            
+            renderColleges();
+        }
+
+        // Handle state filter
+        function handleFilter() {
+            handleSearch(); // Reuse search logic
+        }
+
+        // Animate elements on scroll
+        function animateOnScroll() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            // Observe state sections
+            setTimeout(() => {
+                const sections = document.querySelectorAll('.state-section');
+                sections.forEach(section => {
+                    observer.observe(section);
+                });
+            }, 500);
+        }
+
+        // Initialize the page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const toggler = document.querySelector('.edu-navbar__toggler');
+            const closeBtn = document.querySelector('.edu-nav-close');
+            const navbar = document.querySelector('.edu-navbar');
+            const navItems = document.querySelectorAll('.edu-nav__item');
+
+            // Toggle mobile menu
+            toggler.addEventListener('click', function() {
+                navbar.classList.add('edu-nav--open');
+                document.body.style.overflow = 'hidden';
+                toggler.style.display = 'none';
+                closeBtn.style.display = 'flex';
+            });
+
+            // Close mobile menu
+            closeBtn.addEventListener('click', function() {
+                navbar.classList.remove('edu-nav--open');
+                document.body.style.overflow = '';
+                toggler.style.display = 'block';
+                closeBtn.style.display = 'none';
+                // Close all dropdowns when closing menu
+                navItems.forEach(item => {
+                    item.classList.remove('edu-nav__item--open');
+                    const subdropdowns = item.querySelectorAll('.edu-subdropdown');
+                    subdropdowns.forEach(sub => sub.classList.remove('edu-subdropdown--open'));
+                });
+            });
+
+            // Handle dropdown toggles on mobile
+            navItems.forEach(item => {
+                const link = item.querySelector('.edu-nav__link');
+                const dropdown = item.querySelector('.edu-dropdown');
+                
+                if (dropdown) {
+                    link.addEventListener('click', function(e) {
+                        if (window.innerWidth <= 576) {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            
+                            // Close other dropdowns
+                            navItems.forEach(otherItem => {
+                                if (otherItem !== item) {
+                                    otherItem.classList.remove('edu-nav__item--open');
+                                    const subdropdowns = otherItem.querySelectorAll('.edu-subdropdown');
+                                    subdropdowns.forEach(sub => sub.classList.remove('edu-subdropdown--open'));
+                                }
+                            });
+                            
+                            item.classList.toggle('edu-nav__item--open');
+                        }
+                    });
+                }
+
+                // Handle subdropdown toggles
+                const subdropdowns = item.querySelectorAll('.edu-subdropdown');
+                subdropdowns.forEach(sub => {
+                    const subLink = sub.querySelector('.edu-dropdown__item');
+                    const subMenu = sub.querySelector('.edu-subdropdown__menu');
+                    
+                    if (subMenu) {
+                        subLink.addEventListener('click', function(e) {
+                            if (window.innerWidth <= 576) {
+                                e.preventDefault();
+                                e.stopPropagation();
+                                
+                                // Close other subdropdowns
+                                subdropdowns.forEach(otherSub => {
+                                    if (otherSub !== sub) {
+                                        otherSub.classList.remove('edu-subdropdown--open');
+                                    }
+                                });
+                                
+                                sub.classList.toggle('edu-subdropdown--open');
+                            }
+                        });
+                    }
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (navbar.classList.contains('edu-nav--open') && 
+                    !e.target.closest('.edu-nav-container') && 
+                    !e.target.closest('.edu-navbar__toggler')) {
+                    navbar.classList.remove('edu-nav--open');
+                    document.body.style.overflow = '';
+                    toggler.style.display = 'block';
+                    closeBtn.style.display = 'none';
+                    // Close all dropdowns
+                    navItems.forEach(item => {
+                        item.classList.remove('edu-nav__item--open');
+                        const subdropdowns = item.querySelectorAll('.edu-subdropdown');
+                        subdropdowns.forEach(sub => sub.classList.remove('edu-subdropdown--open'));
+                    });
+                }
+            });
+        });
+
+        function showSpinner(button, event) {
+            event.preventDefault();
+            
+            // Show the loading overlay
+            const overlay = document.getElementById('loadingOverlay');
+            overlay.style.display = 'flex';
+            
+            // Simulate loading for 2 seconds
+            setTimeout(() => {
+                // Hide the loading overlay
+                overlay.style.display = 'none';
+                
+                // Navigate to the appropriate page
+                const href = button.getAttribute('href');
+                if (href) {
+                    window.location.href = href;
+                }
+            }, 2000);
+        }
+    
+        
+    </script>
+</body>
+</html>

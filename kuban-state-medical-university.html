@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kuban State Medical University - IMC Educational Consultancy</title>
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8faff;
+            color: #2d3748;
+        }
+
+        .edu-header {
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .edu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .edu-logo img {
+            height: 50px;
+        }
+
+        .edu-nav a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent-color: #5a67d8;
+        }
+
+        .hero-section {
+            background: var(--primary-gradient);
+            padding: 100px 0 80px;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 10vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.05);
+            z-index: 0;
+            white-space: nowrap;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .detail-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .section-heading {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+
+        .section-heading i {
+            margin-right: 15px;
+            color: var(--accent-color);
+            background: rgba(90, 103, 216, 0.1);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .info-list li::before {
+            content: '✓';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: #f0f4ff;
+            border-left: 5px solid var(--accent-color);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .apply-btn {
+            display: inline-block;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 10px 20px rgba(118, 75, 162, 0.3);
+            transition: transform 0.3s;
+        }
+
+        .apply-btn:hover {
+            transform: translateY(-3px);
+            color: white;
+        }
+
+        .fee-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .fee-table th,
+        .fee-table td {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .fee-table th {
+            color: #718096;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+        }
+
+        .page_bottom_wrap {
+            background: linear-gradient(to right, #f8f9fa, #e9ecef);
+            color: #495057;
+            padding: 60px 0 20px;
+            position: relative;
+        }
+
+        .page_bottom_wrap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, #6c5ce7, #a29bfe, #0984e3, #74b9ff);
+        }
+
+        .footer_content_grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="edu-header">
+        <div class="edu-container">
+            <div class="edu-logo">
+                <a href="index.html"><img src="images/logo.png" alt="IMC Logo"></a>
+            </div>
+            <nav class="edu-nav">
+                <a href="index.html">Home</a>
+                <a href="russia.html">Russia Colleges</a>
+                <a href="apply.html" class="apply-btn-sm"
+                    style="background:var(--accent-color); color: white; padding: 8px 20px; border-radius: 20px;">Apply
+                    Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-bg-text">KUBAN</div>
+        <div class="hero-content edu-container" style="flex-direction: column;">
+            <h1 class="hero-title">Kuban State Medical University</h1>
+            <p class="hero-subtitle">Krasnodar, Russia</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <div class="edu-container" style="display: block;">
+
+            <div class="detail-card">
+                <h2 class="section-heading"><i class="fas fa-university"></i> Overview</h2>
+                <p>Founded in 1920, located in Krasnodar.</p>
+                <p style="margin-top: 15px;"><i class="fas fa-map-marker-alt" style="color:var(--accent-color);"></i>
+                    <strong>Address:</strong> Ulitsa Mitrofana Sedina, 4, Krasnodar, Krasnodar Krai, Russia, 350063.</p>
+            </div>
+
+            <div class="detail-card">
+                <h2 class="section-heading"><i class="fas fa-coins"></i> Fee Structure (2025-26)</h2>
+                <table class="fee-table">
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount</th>
+                    </tr>
+                    <tr>
+                        <td>Tuition Fee</td>
+                        <td>4,83,000 RUB</td>
+                    </tr>
+                    <tr>
+                        <td>Hostel</td>
+                        <td>20,000 RUB</td>
+                    </tr>
+                    <tr>
+                        <td>Indian Mess (Mandatory)</td>
+                        <td>1,15,000 RUB (approx. $1,300 USD)</td>
+                    </tr>
+                    <tr>
+                        <td>Medical Insurance</td>
+                        <td>7,500 RUB</td>
+                    </tr>
+                    <tr>
+                        <td>Documentation Charges</td>
+                        <td>21,000 RUB</td>
+                    </tr>
+                </table>
+                <div class="highlight-box" style="margin-top: 20px;">
+                    <strong>One-Time Charge: $700 USD</strong><br>
+                    <span style="font-size: 0.9em; color: #555;">Includes: Registration, Admission letter, Apostille,
+                        Receiving of Student, Invitation Letter, Immigration Application, Airport Briefing,
+                        Documentations, Translations, Hostel shifting, Library card, Examination card.</span>
+                </div>
+            </div>
+
+            <div class="detail-card">
+                <h2 class="section-heading"><i class="fas fa-list-check"></i> Eligibility</h2>
+                <div class="highlight-box">
+                    <p><strong>Age:</strong> 17–25 years old.</p>
+                    <p><strong>Academic:</strong> 12th pass with 50% aggregate in PCB and English.</p>
+                    <p><strong>Entrance:</strong> NEET Qualified.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 50px;">
+                <h3 style="margin-bottom: 20px; font-weight: 700;">Join the legacy of excellence</h3>
+                <a href="apply.html" class="apply-btn">Apply Now</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer class="page_bottom_wrap">
+        <div class="footer_content_grid">
+            <div class="footer_column">
+                <h3 style="font-weight:600; margin-bottom:20px;">General Inquiries</h3>
+                <p>Phone: <a href="tel:+917488919466" style="text-decoration:none; color:inherit;">+91-7488919466</a>
+                </p>
+                <p>Email: <a href="mailto:imcconsultancy01@gmail.com"
+                        style="text-decoration:none; color:inherit;">imcconsultancy01@gmail.com</a></p>
+            </div>
+            <div class="footer_column">
+                <h3 style="font-weight:600; margin-bottom:20px;">Address</h3>
+                <p>306, 3rd floor, Living Style Mall<br>Jasola Vihar, New Delhi-110025</p>
+            </div>
+        </div>
+        <div style="text-align: center; padding: 20px; opacity: 0.7; font-size: 14px;">
+            © Copyright - IMC Educational Consultancy
+        </div>
+    </footer>
+
+</body>
+
+</html>
