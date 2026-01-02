@@ -6909,6 +6909,8 @@
           onclick="showUniqueSpinner('unique-spinner-medical', this.href); return false;">International Colleges</a>
         <a href="IndianColleges.html"
           onclick="showUniqueSpinner('unique-spinner-india', this.href); return false;">Indian Colleges</a>
+        <a href="russia.html" onclick="showUniqueSpinner('unique-spinner-russia', this.href); return false;">Russia
+          College</a>
       </div>
     </div>
   </div>
@@ -7474,7 +7476,7 @@
 
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Top Medical Universities Abroad</h2>
-          <p class="text-gray-600 mt-2 text-lg">Explore leading medical institutions in Uzbekistan and Kazakhstan.</p>
+          <p class="text-gray-600 mt-2 text-lg">Explore leading medical institutions in Uzbekistan, Kazakhstan, and Russia.</p>
           <div class="mt-4 inline-flex justify-center w-24 h-1 bg-indigo-600 rounded-full"></div>
         </div>
 
@@ -7486,13 +7488,15 @@
               class="tab-btn px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base font-semibold text-gray-600 rounded-full transition-colors duration-300">Uzbekistan</button>
             <button data-country="Kazakhstan"
               class="tab-btn px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base font-semibold text-gray-600 rounded-full transition-colors duration-300">Kazakhstan</button>
+            <button data-country="Russia"
+              class="tab-btn px-4 py-2 md:px-6 md:py-2.5 text-sm md:text-base font-semibold text-gray-600 rounded-full transition-colors duration-300">Russia</button>
           </div>
         </div>
 
         <div class="relative">
           <div class="swiper-container">
             <div class="swiper-wrapper" id="colleges-slider-wrapper">
-            </div>
+            
             <div class="swiper-pagination"></div>
           </div>
           <div class="swiper-button-next"></div>
@@ -7523,6 +7527,39 @@
         { name: "Semey State Medical University", city: "Semey", country: "Kazakhstan", established: 1953, image: '/images/SemeyStateMedicalUniversity.webp', link: 'semey_state_medical.html' },
         { name: "South Kazakhstan Medical Academy", city: "Shymkent", country: "Kazakhstan", established: 1979, image: '/images/SouthKazakhstanStateMedical.webp', link: 'south_kazakhstan_medical.html' },
         { name: "Al-Farabi Kazakh National University", city: "Almaty", country: "Kazakhstan", established: 1934, image: '/images/AlFarabiKazakhNationalUniversity.webp', link: 'AlFarabiKazakhNationalUniversity.html' },
+      
+        // Russia
+        { name: "Amur State Medical Academy", city: "Blagoveshchensk", country: "Russia", established: "-", image: 'ImagesRussiaColleges/AmurStateMedicalAcademy.webp', link: 'amur-state-medical-academy.html' },
+        { name: "Astrakhan State Medical University", city: "Astrakhan", country: "Russia", established: "-", image: 'ImagesRussiaColleges/AstrakhanStateMedicalUniversity.webp', link: 'astrakhan-state-medical-university.html' },
+        { name: "Chechen State University", city: "Grozny", country: "Russia", established: "-", image: 'ImagesRussiaColleges/ChechenStateUniversity.webp', link: 'chechen-state-university.html' },
+        { name: "Chita State Medical Academy", city: "Chita", country: "Russia", established: "-", image: 'ImagesRussiaColleges/ChitaStateMedicalAcademy.webp', link: 'chita-state-medical-academy.html' },
+        { name: "Derzhavin Tambov State University", city: "Tambov", country: "Russia", established: "-", image: 'ImagesRussiaColleges/DerzhavinTambovStateUniversity.jpg', link: 'derzhavin-tambov-state-university.html' },
+        { name: "Far Eastern Federal University", city: "Vladivostok", country: "Russia", established: "-", image: 'ImagesRussiaColleges/FarEasternFederalUniversity.webp', link: 'far-eastern-federal-university.html' },
+        { name: "I.M. Sechenov First Moscow State Medical University", city: "Moscow", country: "Russia", established: "-", image: 'ImagesRussiaColleges/I.M. Sechenov FirstMoscowStateMedicalUniversity.jpeg', link: 'im-sechenov-first-moscow-state-medical-university.html' },
+        { name: "Immanuel Kant Baltic Federal University", city: "Kaliningrad", country: "Russia", established: "-", image: 'ImagesRussiaColleges/ImmanuelKantBalticFederal.webp', link: 'immanuel-kant-baltic-federal-university.html' },
+        { name: "Ivanovo State Medical University", city: "Ivanovo", country: "Russia", established: "-", image: 'ImagesRussiaColleges/IvanovoStateMedicalUniversity.webp', link: 'ivanovo-state-medical-university.html' },
+        { name: "Kabardino Balkarian State University", city: "Nalchik", country: "Russia", established: "-", image: 'ImagesRussiaColleges/Kabardino-BalkarianStateUniversity.webp', link: 'kabardino-balkarian-state-university.html' },
+        { name: "Kazan Federal University", city: "Kazan", country: "Russia", established: "-", image: 'ImagesRussiaColleges/KazanFederalUniversity .webp', link: 'kazan-federal-university.html' },
+        { name: "Kazan State Medical University", city: "Kazan", country: "Russia", established: "-", image: 'ImagesRussiaColleges/Kazan StateMedicalUniversity.webp', link: 'kazan-state-medical-university.html' },
+        { name: "Kemerovo State Medical University", city: "Kemerovo", country: "Russia", established: "-", image: 'ImagesRussiaColleges/KemerovoStateMedicalUniversity.webp', link: 'kemerovo-state-medical-university.html' },
+        { name: "Kirov State Medical University", city: "Kirov", country: "Russia", established: "-", image: 'ImagesRussiaColleges/KirovStateMedicalUniversity.webp', link: 'kirov-state-medical-university.html' },
+        { name: "Kuban State Medical University", city: "Krasnodar", country: "Russia", established: "-", image: 'ImagesRussiaColleges/KubanStateMedicalUniversity.webp', link: 'kuban-state-medical-university.html' },
+        { name: "Kursk State Medical University", city: "Kursk", country: "Russia", established: "-", image: 'ImagesRussiaColleges/KurskStateMedicalUniversity.webp', link: 'kursk-state-medical-university.html' },
+        { name: "Lobachevsky National Research Medical University", city: "Nizhny Novgorod", country: "Russia", established: "-", image: 'ImagesRussiaColleges/National ResearchLobachevskyStateUniversity.jpeg', link: 'lobachevsky-national-research-medical-university.html' },
+        { name: "North Caucasian State Medical Academy", city: "Cherkessk", country: "Russia", established: "-", image: 'ImagesRussiaColleges/NorthCaucasianState MedicalAcademy.webp', link: 'north-caucasian-state-medical-academy.html' },
+        { name: "North Ossetian State Medical Academy", city: "Vladikavkaz", country: "Russia", established: "-", image: 'ImagesRussiaColleges/NorthOssetianStateMedicalAcademy(NOSMA).webp', link: 'north-ossetian-state-medical-academy.html' },
+        { name: "North Western State Medical University", city: "St. Petersburg", country: "Russia", established: "-", image: 'ImagesRussiaColleges/NorthWesternStateMedicalUniversity.webp', link: 'north-western-state-medical-university.html' },
+        { name: "Omsk State Medical University", city: "Omsk", country: "Russia", established: "-", image: 'ImagesRussiaColleges/OmskStateMedicalUniversity.webp', link: 'omsk-state-medical-university.html' },
+        { name: "Orenburg State Medical University", city: "Orenburg", country: "Russia", established: "-", image: 'ImagesRussiaColleges/OrenburgStateMedicalUniversity.webp', link: 'orenburg-state-medical-university.html' },
+        { name: "Pacific State Medical University", city: "Vladivostok", country: "Russia", established: "-", image: 'ImagesRussiaColleges/PacificStateMedicalUniversity.webp', link: 'pacific-state-medical-university.html' },
+        { name: "Privolzhsky Research Medical University", city: "Nizhny Novgorod", country: "Russia", established: "-", image: 'ImagesRussiaColleges/PrivolzhskyResearchMedicalUniversity.webp', link: 'privolzhsky-research-medical-university.html' },
+        { name: "Sevastopol State University", city: "Sevastopol", country: "Russia", established: "-", image: 'ImagesRussiaColleges/SevastopolStateUniversity .webp', link: 'sevastopol-state-university.html' },
+        { name: "South Ural State Medical University", city: "Chelyabinsk", country: "Russia", established: "-", image: 'ImagesRussiaColleges/SouthUralStateMedicalUniversity.webp', link: 'south-ural-state-medical-university.html' },
+        { name: "Tver State Medical University", city: "Tver", country: "Russia", established: "-", image: 'ImagesRussiaColleges/TverStateMedicalUniversity.webp', link: 'tver-state-medical-university.html' },
+        { name: "Ulyanovsk State Medical University", city: "Ulyanovsk", country: "Russia", established: "-", image: 'ImagesRussiaColleges/UlyanovskStateMedicalUniversity.webp', link: 'ulyanovsk-state-medical-university.html' },
+        { name: "Ural State Medical University", city: "Yekaterinburg", country: "Russia", established: "-", image: 'ImagesRussiaColleges/UralStateMedicalUniversity.webp', link: 'ural-state-medical-university.html' },
+        { name: "Voronezh State Medical University", city: "Voronezh", country: "Russia", established: "-", image: 'ImagesRussiaColleges/VoronezhStateMedicalUniversity.webp', link: 'voronezh-state-medical-university.html' },
+        { name: "Yaroslavl State Medical University", city: "Yaroslavl", country: "Russia", established: "-", image: 'ImagesRussiaColleges/YaroslavlStateMedicalUniversity.webp', link: 'yaroslavl-state-medical-university.html' },
       ];
 
       const sliderWrapper = document.getElementById('colleges-slider-wrapper');
@@ -8165,7 +8202,7 @@
           <div class="connector-line">
             <div class="line-inner"></div>
           </div>
-          <a href="404error.html" class="learn-more-btn">Learn More</a>
+          <a href="russia.html" class="learn-more-btn">Learn More</a>
         </div>
         <!-- China -->
         <div class="country-item">
